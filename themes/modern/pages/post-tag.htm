@@ -1,0 +1,13 @@
+title = "post-tag"
+url = "/tags/:tag/:page?"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogTagSearch]
+tag = "{{ :tag }}"
+page = "{{ :page }}"
+resultsPerPage = 10
+==
+{% component 'blogTagSearch' %}

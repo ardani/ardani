@@ -1,0 +1,17 @@
+{% for filelist in filelists %}
+<div class="row">
+    <h2>{{filelist.name}}</h2>
+    <div class="fl-style">
+        {% if filelist.files|length > 0 %}
+        <ul id="list-download">
+        {% for i, file in filelist.files %}
+          <li class="download file-{{ file.extension }}">
+              <a href="{{ file.path }}" target="_blank" >{{ file.title }}</a>
+              <p>{{ file.description }}</p>
+          </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</div>
+{% endfor %}

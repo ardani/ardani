@@ -1,0 +1,23 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+    nama_instansi:
+      label: Nama Instansi
+    alamat:
+      label: Alamat Instansi
+    no_telp:
+      label: No Telp
+    no_fax:
+      label: No Fax
+    visi:
+      label: Visi Instansi
+    email:
+      label: Email Instansi
+    facebook:
+      label: Facebook Akun
+    images:
+      label: logo instansi
+      type: fileupload
+      mode: image

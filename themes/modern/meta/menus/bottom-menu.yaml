@@ -1,0 +1,219 @@
+name: 'Bottom Menu'
+items:
+    -
+        title: Dukungan
+        type: url
+        url: '#'
+        code: ''
+        viewBag:
+            isExternal: '0'
+            isHidden: '0'
+            cssClass: dropdown
+        items:
+            -
+                title: 'Ikatan Bidan Indonesia'
+                nesting: ''
+                type: url
+                url: 'http://www.bidanindonesia.org'
+                code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isExternal: '0'
+                    isHidden: '0'
+                    cssClass: ''
+            -
+                title: 'INNA-PPNI Pusat'
+                nesting: ''
+                type: url
+                url: 'http://www.inna-ppni.or.id'
+                code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isExternal: '0'
+                    isHidden: '0'
+                    cssClass: ''
+            -
+                title: 'Departemen Kesehatan'
+                nesting: ''
+                type: url
+                url: 'http://www.depkes.go.id'
+                code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isExternal: '0'
+                    isHidden: '0'
+                    cssClass: ''
+    -
+        title: Kopertis
+        nesting: ''
+        type: url
+        url: '#'
+        code: ''
+        reference: ''
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isExternal: '0'
+            isHidden: '0'
+            cssClass: ''
+        items:
+            -
+                title: EPSBED
+                nesting: ''
+                type: url
+                url: 'http://forlap.dikti.go.id'
+                code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isExternal: '0'
+                    isHidden: '0'
+                    cssClass: ''
+            -
+                title: 'TPA & TOEP Dikti'
+                nesting: ''
+                type: url
+                url: 'https://www.plti.co.id'
+                code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isExternal: '0'
+                    isHidden: '0'
+                    cssClass: ''
+            -
+                title: 'Akreditasi BAN-PT'
+                nesting: ''
+                type: url
+                url: 'http://ban-pt.kemdiknas.go.id/direktori.php'
+                code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isExternal: '0'
+                    isHidden: '0'
+                    cssClass: ''
+            -
+                title: SIM-LITABMAS
+                nesting: ''
+                type: url
+                url: 'http://simlitabmas.dikti.go.id'
+                code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isExternal: '0'
+                    isHidden: '0'
+                    cssClass: ''
+    -
+        title: Kampus
+        type: url
+        url: '#'
+        code: ''
+        viewBag:
+            isExternal: '0'
+            isHidden: '0'
+            cssClass: ''
+        items:
+            -
+                title: 'Visi Misi'
+                nesting: '0'
+                type: static-page
+                code: ''
+                reference: page-kampus-visi-dan-misi
+                replace: '0'
+                viewBag:
+                    isExternal: '0'
+                    isHidden: '0'
+                    cssClass: ''
+            -
+                title: Jurusan
+                nesting: '0'
+                type: static-page
+                code: ''
+                reference: page-kampus-jurusan-dan-fakultas
+                replace: '0'
+                viewBag:
+                    isExternal: '0'
+                    isHidden: '0'
+                    cssClass: ''
+            -
+                title: Informasi
+                type: cms-page
+                code: ''
+                reference: informasi
+                viewBag:
+                    isExternal: '0'
+                    isHidden: '0'
+                    cssClass: ''
+            -
+                title: Dosen
+                type: cms-page
+                code: ''
+                reference: staf-pengajar
+                viewBag:
+                    isExternal: '0'
+                    isHidden: '0'
+                    cssClass: ''
+            -
+                title: Karyawan
+                type: cms-page
+                code: ''
+                reference: staf-karyawan
+                viewBag:
+                    isExternal: '0'
+                    isHidden: '0'
+                    cssClass: ''
+    -
+        title: Layanan
+        type: url
+        url: '#'
+        code: ''
+        viewBag:
+            isExternal: '0'
+            isHidden: '0'
+            cssClass: ''
+        items:
+            -
+                title: Elearning
+                nesting: '0'
+                type: static-page
+                code: ''
+                reference: page-e-learning
+                replace: '0'
+                viewBag:
+                    isExternal: '0'
+                    isHidden: '0'
+                    cssClass: ''
+            -
+                title: Digilib
+                nesting: '0'
+                type: static-page
+                code: ''
+                reference: page-digilib
+                replace: '0'
+                viewBag:
+                    isExternal: '0'
+                    isHidden: '0'
+                    cssClass: ''
+            -
+                title: 'Siakad Online'
+                nesting: '0'
+                type: static-page
+                code: ''
+                reference: page-layanan-siakad-online
+                replace: '0'
+                viewBag:
+                    isExternal: '0'
+                    isHidden: '0'
+                    cssClass: ''

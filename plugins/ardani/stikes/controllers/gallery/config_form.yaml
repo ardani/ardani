@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Gallery
+
+# Model Form Field configuration
+form: $/ardani/stikes/models/gallery/fields.yaml
+
+# Model Class name
+modelClass: Ardani\Stikes\Models\Gallery
+
+# Default redirect location
+defaultRedirect: ardani/stikes/gallery
+
+# Create page
+create:
+    title: Create Gallery
+    redirect: ardani/stikes/gallery/update/:id
+    redirectClose: ardani/stikes/gallery
+
+# Update page
+update:
+    title: Edit Gallery
+    redirect: ardani/stikes/gallery
+    redirectClose: ardani/stikes/gallery
+
+# Preview page
+preview:
+    title: Preview Gallery

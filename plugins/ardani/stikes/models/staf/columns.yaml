@@ -1,0 +1,20 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    nik:
+        label: NIK
+        searchable: true
+    nama_lengkap:
+        label: Nama Lengkap
+        sortable: false
+    jabatan:
+        label : Jabatan
+        relation: jabatan
+        select: nama_jabatan
+    nama_tipe_staf:
+        label: Tipe Staf
+        sortable: false
+    email:
+        label: Email

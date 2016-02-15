@@ -1,0 +1,6 @@
+plugin:
+    name: 'ardani.test::lang.plugin.name'
+    description: 'ardani.test::lang.plugin.description'
+    author: Ardani
+    icon: oc-icon-adjust
+    homepage: ''

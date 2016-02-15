@@ -1,0 +1,8 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    nama_jabatan:
+        label: Nama Jabatan
+        searchable: true

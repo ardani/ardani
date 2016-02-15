@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Slider
+
+# Model Form Field configuration
+form: $/ardani/stikes/models/slider/fields.yaml
+
+# Model Class name
+modelClass: Ardani\Stikes\Models\Slider
+
+# Default redirect location
+defaultRedirect: ardani/stikes/slider
+
+# Create page
+create:
+    title: Create Slider
+    redirect: ardani/stikes/slider/update/:id
+    redirectClose: ardani/stikes/slider
+
+# Update page
+update:
+    title: Edit Slider
+    redirect: ardani/stikes/slider
+    redirectClose: ardani/stikes/slider
+
+# Preview page
+preview:
+    title: Preview Slider

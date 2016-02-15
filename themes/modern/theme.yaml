@@ -1,0 +1,9 @@
+name: Modern
+description: 'Theme for STIKES BHAKTI MULIA.'
+author: Ardani
+homepage: 'http://ardani.github.io'
+code: Modern
+require:
+    - RainLab.User
+    - RainLab.Blog
+    - RainLab.Forum

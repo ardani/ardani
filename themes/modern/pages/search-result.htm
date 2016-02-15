@@ -1,0 +1,18 @@
+title = "Search result"
+url = "/search/result/:search/:page?"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[searchResult]
+searchTerm = "{{ :search }}"
+pageNumber = "{{ :page }}"
+hightlight = 1
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "category"
+postPage = "detail"
+==
+{% component 'searchResult' %}

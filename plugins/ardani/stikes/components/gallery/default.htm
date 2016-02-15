@@ -1,0 +1,17 @@
+{% set galleries = __SELF__.galleries %}
+<div class="row">
+    {% for gallery in galleries %}
+    <div class="col-xs-12 col-sm-4 col-md-3">
+        <div class="recent-work-wrap">
+            <img class="img-responsive" src="{{gallery.image_path | media}}" alt="">
+            <div class="overlay">
+                <div class="recent-work-inner">
+                    <h3><a href="#">{{ gallery.judul}}</a> </h3>
+                    <p>{{gallery.deskripsi}}</p>
+                    <a class="preview" href="{{gallery.image_path|media}}" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

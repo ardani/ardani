@@ -1,0 +1,13 @@
+[viewBag]
+==
+{% for item in items if not item.viewBag.isHidden %}
+    <li class="{{ item.isActive ? 'active' : '' }} {{item.viewBag.cssClass}}">
+        <a {{ item.items ? 'class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"' : '' }} href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }}>
+            {{ item.title }} {{ item.items ? '<span class="caret"></span>' : '' }}
+        </a>
+
+        {% if item.items %}
+            <ul class="dropdown-menu">{% partial 'menu/menu-items' items=item.items %}</ul>
+        {% endif %}
+    </li>
+{% endfor %}

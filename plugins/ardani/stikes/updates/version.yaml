@@ -1,0 +1,12 @@
+1.0.1: First version of stikes
+1.0.2:
+    - add table staf and jabatan
+    - create_stafs_table.php
+    - create_jabatans_table.php
+1.0.3:
+    - add menu gallery
+    - create_galleries_table.php
+    - create_kategoris_table.php
+1.0.4:
+    - add slider
+    - create_sliders_table.php

@@ -1,0 +1,92 @@
+title = "detail"
+url = "/detail/:slug"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "category"
+
+[searchForm]
+resultPage = "search-result"
+categoryFilter = 0
+
+[blogTags]
+results = 10
+direction = "desc"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "category"
+==
+<?php
+function onEnd() {
+	$this->page->title = $this['post']->title;
+}
+?>
+==
+{% set post = blogPost.post %}
+<div class="blog">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="blog-item">
+                <div class="featured-images text-center">
+                    {% if post.featured_images.count %}
+                    <a href="{{ post.url }}"><img class="img-responsive img-blog" data-src="{{ post.featured_images[0].filename }}"
+                                                  src="{{ post.featured_images[0].path }}" alt="{{ post.featured_images[0].description }}" /></a>
+                    {% else %}
+                    <a href="{{ post.url }}"><img class="img-responsive img-blog" src="{{ '/storage/app/media/big-no-thumbnail.jpg' | app}}"></a>
+                    {% endif %}
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-2 text-center">
+                        <div class="entry-meta">
+                            <span class="publish_date">{{ post.published_at|date('M d, Y') }}</span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-10 blog-content">
+                        <h2>{{ post.title }}</h2>
+                        {{ post.content_html|raw }}
+                    </div>
+                </div>
+            </div><!--/.blog-item-->
+        </div><!--/.col-md-8-->
+
+        <aside class="col-md-4">
+            <div class="widget search">
+                <form role="form" method="get" action="{{ searchForm.resultPage|page }}">
+                    <input type="text" name="search" class="form-control search_box" autocomplete="off" placeholder="Pencarian">
+                </form>
+            </div><!--/.search-->
+            <div class="widget tags">
+                <h3>Tag Artikel</h3>
+                <ul class="tag-cloud">
+                    {% for tag in blogTags.tags %}
+                    <li><a class="btn btn-xs btn-primary" href="#">{{ tag.name }} <span class="label label-info">{{ tag.posts|length }}</span></a></li>
+                    {% endfor %}
+                </ul>
+            </div><!--/.tags-->
+            {% set categories = blogCategories.categories %}
+            <div class="widget categories">
+                <h3>Kategori</h3>
+                <ul class="blog_category">
+                    {% for category in categories %}
+                    {% set postCount = category.post_count %}
+                    <li>
+                        <a href="{{ category.url }}">{{ category.name }}
+                            {% if postCount %}
+                            <span class="label label-info">{{ postCount }}</span>
+                            {% endif %}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+
+    </div><!--/.row-->
+
+</div><!--/.blog-->

@@ -1,0 +1,10 @@
+[viewBag]
+
+[staticMenu]
+code = "top-menu"
+==
+{% if staticMenu.menuItems %}
+    <ul class='nav navbar-nav'>
+        {% partial 'menu/menu-items' items=staticMenu.menuItems %}
+    </ul>
+{% endif %}

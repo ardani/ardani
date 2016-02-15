@@ -1,0 +1,12 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    judul:
+        label: Judul
+        searchable: true
+    kategori:
+        label : Kategori
+        relation: kategori
+        select: nama_kategori

@@ -1,0 +1,18 @@
+{% set stafs = __SELF__.stafs %}
+<div class="row">
+    {% for staf in stafs %}
+    <div class="col-md-4 wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+        <div class="clients-comments text-center">
+            <img src="{{staf.picture.path}}" class="img-circle" alt="">
+            <h4><span>{{ staf.nama_depan ~ ' ' ~ staf.nama_belakang }}</span></h4>
+
+            <ul class="list-unstyled">
+                <li>Nik : {{ staf.nik }}</li>
+                <li>Jabatan : {{ staf.jabatan.nama_jabatan }}</li>
+                <li>Email : {{ staf.email }}</li>
+            </ul>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{{ stafs.render|raw }}

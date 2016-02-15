@@ -1,0 +1,36 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    nik:
+        label: No Induk Karyawan
+        span: auto
+    nama_depan:
+        label: Nama Depan
+        span: auto
+    nama_belakang:
+        label: Nama Belakang
+        span: auto
+    email:
+        label: Email
+        span: auto
+    tipe_staf:
+        label: Tipe Staf
+        span: auto
+        type: radio
+        options:
+            1: [Dosen]
+            2: [Karyawan]
+    jabatan_id:
+        label: jabatan
+        span: auto
+        type: dropdown
+        options: listJabatan
+    picture:
+        label: Foto Profile
+        type: fileupload
+        mode: image
+        span: auto
+        imageHeight: 260
+        imageWidth: 260

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Kategori
+
+# Model Form Field configuration
+form: $/ardani/stikes/models/kategori/fields.yaml
+
+# Model Class name
+modelClass: Ardani\Stikes\Models\Kategori
+
+# Default redirect location
+defaultRedirect: ardani/stikes/kategori
+
+# Create page
+create:
+    title: Create Kategori
+    redirect: ardani/stikes/kategori/update/:id
+    redirectClose: ardani/stikes/kategori
+
+# Update page
+update:
+    title: Edit Kategori
+    redirect: ardani/stikes/kategori
+    redirectClose: ardani/stikes/kategori
+
+# Preview page
+preview:
+    title: Preview Kategori

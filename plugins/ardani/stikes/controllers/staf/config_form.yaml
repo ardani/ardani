@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Staf
+
+# Model Form Field configuration
+form: $/ardani/stikes/models/staf/fields.yaml
+
+# Model Class name
+modelClass: Ardani\Stikes\Models\Staf
+
+# Default redirect location
+defaultRedirect: ardani/stikes/staf
+
+# Create page
+create:
+    title: Create Staf
+    redirect: ardani/stikes/staf/update/:id
+    redirectClose: ardani/stikes/staf
+
+# Update page
+update:
+    title: Edit Staf
+    redirect: ardani/stikes/staf
+    redirectClose: ardani/stikes/staf
+
+# Preview page
+preview:
+    title: Preview Staf

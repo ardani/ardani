@@ -1,0 +1,18 @@
+description = "menu bottom"
+
+[viewBag]
+==
+{% for item in items %}
+    <div class="col-md-2 col-sm-2">
+    	<div class="widget">
+    		<h3>{{ item.title }}</h3>
+    		<ul>
+    			{% if item.items %}
+	    			{% for child in item.items %}
+	    				<li><a href="{{child.url}}">{{child.title}}</a></li>
+	    			{% endfor %}
+    			{% endif %}
+    		</ul>
+    	</div>
+    </div>
+{% endfor %}

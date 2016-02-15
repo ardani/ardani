@@ -1,0 +1,22 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    judul:
+        label: Judul
+        span: left
+    kategori_id:
+        label: Kategori
+        span: right
+        type: dropdown
+        options: listKategori
+    deskripsi:
+        label: Deskripsi
+        span: auto
+        type: textarea
+    image_path:
+        label: Gallery
+        span: auto
+        type: mediafinder
+        mode: image

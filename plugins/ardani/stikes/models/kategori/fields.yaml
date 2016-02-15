@@ -1,0 +1,8 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    nama_kategori:
+        label: Nama Kategori
+        span: auto
