@@ -15,6 +15,10 @@ php-errors.log
 sftp-config.json
 selenium.php
 composer.lock
-
+storage/cms
+storage/framework
+storage/logs
+storage/storage
+storage/temp
 # for netbeans
 nbproject
