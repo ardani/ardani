@@ -1,0 +1,183 @@
+1453357419s:9042:"a:6:{s:5:"mtime";i:1451346714;s:7:"content";s:4347:"title = "Wisuda"
+url = "/akademik/wisuda/:page?"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "wisuda"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "category"
+postPage = "detail"
+[blogTags]
+results = 10
+direction = "desc"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "category"
+==
+{% set posts = blogPosts.posts %}
+<div class="blog">
+    <div class="row">
+        <div class="col-md-8">
+            {% for post in posts %}
+            <div class="blog-item">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-2 text-center">
+                        <div class="entry-meta">
+                            <span class="publish_date">{{ post.published_at|date('M d, Y') }}</span>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-10 blog-content">
+                        {% if post.featured_images.count %}
+                        <a href="{{ post.url }}"><img class="img-responsive img-blog" data-src="{{ post.featured_images[0].filename }}"
+                                                      src="{{ post.featured_images[0].path }}" alt="{{ post.featured_images[0].description }}" style="max-width: 100%" /></a>
+                        {% else %}
+                        <a href="{{ post.url }}"><img class="img-responsive img-blog" src="/storage/app/media/big-no-thumbnail.jpg" alt=""></a>
+                        {% endif %}
+                        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                        <p>{{ post.summary }}</p>
+                        <a class="btn btn-primary readmore" href="{{ post.url }}">Selengkapnya <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div><!--/.blog-item-->
+            {% endfor %}
+
+            {% if posts.lastPage > 1 %}
+            <ul class="pagination pagination-lg">
+                {% if posts.currentPage > 1 %}
+                <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}"><i class="fa fa-long-arrow-left"></i> Prev</a></li>
+                {% endif %}
+
+                {% for page in 1..posts.lastPage %}
+                <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                    <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+                </li>
+                {% endfor %}
+
+                {% if posts.lastPage > posts.currentPage %}
+                <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next <i class="fa fa-long-arrow-right"></i></a></li>
+                {% endif %}
+            </ul>
+            {% endif %}
+
+        </div><!--/.col-md-8-->
+        <aside class="col-md-4">
+            <div class="widget search">
+                <form role="form" method="get" action="{{ searchForm.resultPage|page }}">
+                    <input type="text" name="search" class="form-control search_box" autocomplete="off" placeholder="Pencarian">
+                </form>
+            </div><!--/.search-->
+            <div class="widget tags">
+                <h3>Tag Cloud</h3>
+                <ul class="tag-cloud">
+                    {% for tag in blogTags.tags %}
+                    <li><a class="btn btn-xs btn-primary" href="#">{{ tag.name }} ({{ tag.posts|length }})</a></li>
+                    {% endfor %}
+                </ul>
+            </div><!--/.tags-->
+            {% set categories = blogCategories.categories %}
+            <div class="widget categories">
+                <h3>Kategori</h3>
+                <ul class="blog_category">
+                    {% for category in categories %}
+                    {% set postCount = category.post_count %}
+                    <li>
+                        <a href="{{ category.url }}">{{ category.name }}
+                            {% if postCount %}
+                            <span class="label label-info">{{ postCount }}</span>
+                            {% endif %}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+    </div><!--/.row-->
+</div>";s:7:"viewBag";a:0:{}s:8:"settings";a:7:{s:5:"title";s:6:"Wisuda";s:3:"url";s:23:"/akademik/wisuda/:page?";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:10:"components";a:3:{s:9:"blogPosts";a:7:{s:10:"pageNumber";s:11:"{{ :page }}";s:14:"categoryFilter";s:6:"wisuda";s:12:"postsPerPage";s:2:"10";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:8:"category";s:8:"postPage";s:6:"detail";}s:8:"blogTags";a:2:{s:7:"results";s:2:"10";s:9:"direction";s:4:"desc";}s:14:"blogCategories";a:3:{s:4:"slug";s:11:"{{ :slug }}";s:12:"displayEmpty";s:1:"0";s:12:"categoryPage";s:8:"category";}}}s:4:"code";N;s:6:"markup";s:3895:"{% set posts = blogPosts.posts %}
+<div class="blog">
+    <div class="row">
+        <div class="col-md-8">
+            {% for post in posts %}
+            <div class="blog-item">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-2 text-center">
+                        <div class="entry-meta">
+                            <span class="publish_date">{{ post.published_at|date('M d, Y') }}</span>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-10 blog-content">
+                        {% if post.featured_images.count %}
+                        <a href="{{ post.url }}"><img class="img-responsive img-blog" data-src="{{ post.featured_images[0].filename }}"
+                                                      src="{{ post.featured_images[0].path }}" alt="{{ post.featured_images[0].description }}" style="max-width: 100%" /></a>
+                        {% else %}
+                        <a href="{{ post.url }}"><img class="img-responsive img-blog" src="/storage/app/media/big-no-thumbnail.jpg" alt=""></a>
+                        {% endif %}
+                        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                        <p>{{ post.summary }}</p>
+                        <a class="btn btn-primary readmore" href="{{ post.url }}">Selengkapnya <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div><!--/.blog-item-->
+            {% endfor %}
+
+            {% if posts.lastPage > 1 %}
+            <ul class="pagination pagination-lg">
+                {% if posts.currentPage > 1 %}
+                <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}"><i class="fa fa-long-arrow-left"></i> Prev</a></li>
+                {% endif %}
+
+                {% for page in 1..posts.lastPage %}
+                <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                    <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+                </li>
+                {% endfor %}
+
+                {% if posts.lastPage > posts.currentPage %}
+                <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next <i class="fa fa-long-arrow-right"></i></a></li>
+                {% endif %}
+            </ul>
+            {% endif %}
+
+        </div><!--/.col-md-8-->
+        <aside class="col-md-4">
+            <div class="widget search">
+                <form role="form" method="get" action="{{ searchForm.resultPage|page }}">
+                    <input type="text" name="search" class="form-control search_box" autocomplete="off" placeholder="Pencarian">
+                </form>
+            </div><!--/.search-->
+            <div class="widget tags">
+                <h3>Tag Cloud</h3>
+                <ul class="tag-cloud">
+                    {% for tag in blogTags.tags %}
+                    <li><a class="btn btn-xs btn-primary" href="#">{{ tag.name }} ({{ tag.posts|length }})</a></li>
+                    {% endfor %}
+                </ul>
+            </div><!--/.tags-->
+            {% set categories = blogCategories.categories %}
+            <div class="widget categories">
+                <h3>Kategori</h3>
+                <ul class="blog_category">
+                    {% for category in categories %}
+                    {% set postCount = category.post_count %}
+                    <li>
+                        <a href="{{ category.url }}">{{ category.name }}
+                            {% if postCount %}
+                            <span class="label label-info">{{ postCount }}</span>
+                            {% endif %}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+    </div><!--/.row-->
+</div>";}";

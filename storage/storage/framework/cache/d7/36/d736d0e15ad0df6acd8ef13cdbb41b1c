@@ -1,0 +1,18 @@
+1453357419s:1074:"a:6:{s:5:"mtime";i:1451181348;s:7:"content";s:391:"title = "Search result"
+url = "/search/result/:search/:page?"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[searchResult]
+searchTerm = "{{ :search }}"
+pageNumber = "{{ :page }}"
+hightlight = 1
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "category"
+postPage = "detail"
+==
+{% component 'searchResult' %}";s:7:"viewBag";a:0:{}s:8:"settings";a:7:{s:5:"title";s:13:"Search result";s:3:"url";s:29:"/search/result/:search/:page?";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:10:"components";a:1:{s:12:"searchResult";a:8:{s:10:"searchTerm";s:13:"{{ :search }}";s:10:"pageNumber";s:11:"{{ :page }}";s:10:"hightlight";s:1:"1";s:12:"postsPerPage";s:2:"10";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:8:"category";s:8:"postPage";s:6:"detail";}}}s:4:"code";N;s:6:"markup";s:30:"{% component 'searchResult' %}";}";

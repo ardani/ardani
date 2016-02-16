@@ -1,0 +1,22 @@
+1453357419s:964:"a:6:{s:5:"mtime";i:1453246296;s:7:"content";s:392:"[viewBag]
+
+[Slider]
+catFilter = 2
+==
+<section id="main-slider" class="no-margin">
+    {% component 'Slider' %}
+    <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+        <i class="fa fa-chevron-left"></i>
+    </a>
+    <a class="next hidden-xs" href="#main-slider" data-slide="next">
+        <i class="fa fa-chevron-right"></i>
+    </a>
+</section><!--/#main-slider-->";s:7:"viewBag";a:0:{}s:8:"settings";a:1:{s:10:"components";a:2:{s:7:"viewBag";a:0:{}s:6:"Slider";a:1:{s:9:"catFilter";s:1:"2";}}}s:4:"code";N;s:6:"markup";s:355:"<section id="main-slider" class="no-margin">
+    {% component 'Slider' %}
+    <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+        <i class="fa fa-chevron-left"></i>
+    </a>
+    <a class="next hidden-xs" href="#main-slider" data-slide="next">
+        <i class="fa fa-chevron-right"></i>
+    </a>
+</section><!--/#main-slider-->";}";

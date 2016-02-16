@@ -1,0 +1,20 @@
+1453357419s:1166:"a:6:{s:5:"mtime";i:1451953506;s:7:"content";s:465:"title = "Staf Pengajar"
+url = "/page/kampus/staf-pengajar"
+layout = "static-layout"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[Staf]
+maxItem = 20
+stafFilter = 1
+==
+<div class="center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+    <h2>Staf Pengajar (Dosen)</h2>
+    <p class="lead"><i>Staf pengajar yang berdedikasi tinggi dalam menyampaikan materi kepada mahasiswa</i></p>
+</div>
+{% component 'Staf' %}";s:7:"viewBag";a:0:{}s:8:"settings";a:7:{s:5:"title";s:13:"Staf Pengajar";s:3:"url";s:26:"/page/kampus/staf-pengajar";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:10:"components";a:1:{s:4:"Staf";a:2:{s:7:"maxItem";s:2:"20";s:10:"stafFilter";s:1:"1";}}}s:4:"code";N;s:6:"markup";s:282:"<div class="center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+    <h2>Staf Pengajar (Dosen)</h2>
+    <p class="lead"><i>Staf pengajar yang berdedikasi tinggi dalam menyampaikan materi kepada mahasiswa</i></p>
+</div>
+{% component 'Staf' %}";}";

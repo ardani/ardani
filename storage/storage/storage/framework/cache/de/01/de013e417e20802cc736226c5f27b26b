@@ -1,0 +1,130 @@
+1453357419s:6952:"a:7:{s:5:"mtime";i:1452845789;s:7:"content";s:2255:"<div class="container">
+        <div class="center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+            <h2>Layanan Kampus</h2>
+            <p class="lead">Layanan kampus yang kami sediakan untuk mahasiswa dan dosen</p>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="media services-wrap wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                    <div class="pull-left">
+                        <img class="img-responsive" src="/web/storage/app/media/services4.png">
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">Perpustakaan</h3>
+                        <p>Perpustakaan yang berisi buku buku untuk menunjang proses belajar </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="media services-wrap wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                    <div class="pull-left">
+                        <img class="img-responsive" src="/web/storage/app/media/services5.png">
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">E-Learning</h3>
+                        <p>Materi atau module yang tersedia dapat diakses secara online </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="media services-wrap wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                    <div class="pull-left">
+                        <img class="img-responsive" src="/web/storage/app/media/services1.png">
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">Siakad Online</h3>
+                        <p>Proses KRS dan akses nilai IPK dapat dilakukan secara online oleh Mahasiswa</p>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.row-->
+    </div>";s:7:"viewBag";a:0:{}s:8:"settings";a:1:{s:10:"components";a:0:{}}s:4:"code";N;s:6:"markup";s:2255:"<div class="container">
+        <div class="center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+            <h2>Layanan Kampus</h2>
+            <p class="lead">Layanan kampus yang kami sediakan untuk mahasiswa dan dosen</p>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="media services-wrap wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                    <div class="pull-left">
+                        <img class="img-responsive" src="/web/storage/app/media/services4.png">
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">Perpustakaan</h3>
+                        <p>Perpustakaan yang berisi buku buku untuk menunjang proses belajar </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="media services-wrap wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                    <div class="pull-left">
+                        <img class="img-responsive" src="/web/storage/app/media/services5.png">
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">E-Learning</h3>
+                        <p>Materi atau module yang tersedia dapat diakses secara online </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="media services-wrap wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                    <div class="pull-left">
+                        <img class="img-responsive" src="/web/storage/app/media/services1.png">
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">Siakad Online</h3>
+                        <p>Proses KRS dan akses nilai IPK dapat dilakukan secara online oleh Mahasiswa</p>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.row-->
+    </div>";s:13:"parsed-markup";s:2255:"<div class="container">
+        <div class="center wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+            <h2>Layanan Kampus</h2>
+            <p class="lead">Layanan kampus yang kami sediakan untuk mahasiswa dan dosen</p>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6 col-md-4">
+                <div class="media services-wrap wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                    <div class="pull-left">
+                        <img class="img-responsive" src="/web/storage/app/media/services4.png">
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">Perpustakaan</h3>
+                        <p>Perpustakaan yang berisi buku buku untuk menunjang proses belajar </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="media services-wrap wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                    <div class="pull-left">
+                        <img class="img-responsive" src="/web/storage/app/media/services5.png">
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">E-Learning</h3>
+                        <p>Materi atau module yang tersedia dapat diakses secara online </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4">
+                <div class="media services-wrap wow fadeInDown animated" style="visibility: visible; animation-name: fadeInDown;">
+                    <div class="pull-left">
+                        <img class="img-responsive" src="/web/storage/app/media/services1.png">
+                    </div>
+                    <div class="media-body">
+                        <h3 class="media-heading">Siakad Online</h3>
+                        <p>Proses KRS dan akses nilai IPK dapat dilakukan secara online oleh Mahasiswa</p>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.row-->
+    </div>";}";

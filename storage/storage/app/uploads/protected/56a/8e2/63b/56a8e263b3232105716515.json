@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "stikesbhaktimulia-1203",
+  "private_key_id": "da72aba719e0ee738173131549ecda52e4fd6fed",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCpSQcbs5qllDGG\nK58VVUrV69JBF7uK9zjGpTSvTeoYSuFZgJNDIbredHoUZ7dvxTK3Npmrfuscaa2M\nn1ssJQCE4nHt+a2HpqNPEoZIYn4KztLORNAxML0m5XTniJ+1E+jYNXAHAmYd/8cb\nFSmRuYpKegcnW8YimcMsJwtIIeUtqXz6oXGag/wZ2gKVE7XXlGfjjSRsuY81wBQ0\nFHPCqIbMTcgvUsouxz6v9cGNL+uSkZ7rsInVjF6YGtFEbKY9zSQcfAU+Vg+EDt+0\nnFvGKWwYZ9WHz4acRDGiJUpaSZdLb2uqgaVUy75/KQumuP4/MqAH0NT/4hP4QaXw\n4TBxpTE9AgMBAAECggEAFTmTy5RcSnBnOTRU8N7N0D6OER1BpW3Tz4w9K9GwDTWu\nRYOKcztSa7vc5pwOctQdxLzyzX7PSbOyT9RXIRTOmNqvgC/y4vQwu6RN89tthDtk\nUPptxA0hWjQg0TrfE1wYsKsajbZuSUqdkza3DI9f2HCuXu/xyrrOrsWCc5vUWUIX\nZnP2MSkzQq6WKdRsKGr/sl5SdGYvgEo2diGYNKmY6M2Zw5gQEVO8HbkYgBtqDrc1\nosx9oa+eRFnQ6vYUkrqCO0rtDbn81jSaDuJf0B15tRrUVd7RjgiixYUdy0C8Ibo8\nZAZKPEnMGCDzLu8WDA3boDhZSd+9Tn5iJmIqHUbZXQKBgQDoP/1bFMcGhUVXxB0D\nA08kc4NO7meHtXsd7VB2UdDHoujLVAeJJgWIlWKEpzkxHQYZiRlI9Prsz9wr/d4h\nrmfLakJ9KaGJ4AqeIl7NMRUXLrLTBxl5cU5Cl0gNzjMFr/g0tcuPX+ayaVuQfPL0\nnso65QjBFuJGsuQ4OFAt+Fwu7wKBgQC6mLO1KNJpcwAgGgDy63nhaa6mJYpEXOre\npnjFgnuKnzzXrsdqvQ5unsJGXPJ0eyz8bYWzJeFLxi+W45PcHIZvKkJ+Tx6OS7W8\nzhNZ+kL55C0JNd9JjPfXHFB//HKOqhDd+CX0emx3OrBPdNk6yOGJDhhxDnJSW4aY\naRSXsS2ikwKBgQC3OLQxRKT2ufDImoigtd2bzh1LCb1XTI7CP1P44/anaBfrQHFp\neztmUyOTrzDpVBJZ1tTBv7KtXBZABllVjPeJfFzTzSIJWVxHAKp1ikEvNsIQxUsN\niZvJ4PsRGRkbZYWUX88lXuzq1z9LL6ej4Bl+eO19FwaP69UrnRF0Erj2tQKBgBsq\nQfdcww0w/dKulnbHC05iuVdc3b1IHbVeXPS8I0oyFoR74HJMpb47BKODwpRsnkb9\nltpW6G7EoocACLWhvXyPlXCYCiXDJekfwzd1NKz2qAvQOPqXODmr2JhZY0AbyCrY\nhoYKEKJm++YFZ96kAhmW4L4M0V3mDzk/Cw1ucOtbAoGBAK3QxDOMVLazNQlzIRgh\nigGgzvENt2G5QoRUpWXFvurEyu3PTryASznxYzGWnmwKYoS1ssKyLtb0SWXtsjT+\nqYVymwkgxeMXCm7xdrBCot6Ltrp8Er6lkUOBm/5HjYZMDXxHZoxaqErrLo1Ox1rW\ncfNhMEZUqdSeLsOXrD6kCxUq\n-----END PRIVATE KEY-----\n",
+  "client_email": "stikes-bhakti-mulia@stikesbhaktimulia-1203.iam.gserviceaccount.com",
+  "client_id": "108788512592557654773",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/stikes-bhakti-mulia%40stikesbhaktimulia-1203.iam.gserviceaccount.com"
+}

@@ -1,0 +1,23 @@
+1453357419s:1437:"a:6:{s:5:"mtime";i:1453337158;s:7:"content";s:639:"[viewBag]
+==
+{% for item in items if not item.viewBag.isHidden %}
+    <li class="{{ item.isActive ? 'active' : '' }} {{item.viewBag.cssClass}}">
+        <a {{ item.items ? 'class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"' : '' }} href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }}>
+            {{ item.title }} {{ item.items ? '<span class="caret"></span>' : '' }}
+        </a>
+
+        {% if item.items %}
+            <ul class="dropdown-menu">{% partial 'menu/menu-items' items=item.items %}</ul>
+        {% endif %}
+    </li>
+{% endfor %}";s:7:"viewBag";a:0:{}s:8:"settings";a:1:{s:10:"components";a:1:{s:7:"viewBag";a:0:{}}}s:4:"code";N;s:6:"markup";s:624:"{% for item in items if not item.viewBag.isHidden %}
+    <li class="{{ item.isActive ? 'active' : '' }} {{item.viewBag.cssClass}}">
+        <a {{ item.items ? 'class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"' : '' }} href="{{ item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }}>
+            {{ item.title }} {{ item.items ? '<span class="caret"></span>' : '' }}
+        </a>
+
+        {% if item.items %}
+            <ul class="dropdown-menu">{% partial 'menu/menu-items' items=item.items %}</ul>
+        {% endif %}
+    </li>
+{% endfor %}";}";

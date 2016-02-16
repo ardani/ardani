@@ -1,0 +1,10 @@
+1453357419s:914:"a:7:{s:5:"mtime";i:1453020337;s:7:"content";s:202:"[viewBag]
+title = "Beasiswa dan Biaya"
+url = "/page/mahasiswa/beasiswa-dan-biaya"
+layout = "static-layout"
+is_hidden = 0
+navigation_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+<p>​</p>";s:7:"viewBag";a:7:{s:5:"title";s:18:"Beasiswa dan Biaya";s:3:"url";s:34:"/page/mahasiswa/beasiswa-dan-biaya";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:17:"navigation_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";}s:8:"settings";a:1:{s:10:"components";a:1:{s:7:"viewBag";a:7:{s:5:"title";s:18:"Beasiswa dan Biaya";s:3:"url";s:34:"/page/mahasiswa/beasiswa-dan-biaya";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:17:"navigation_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";}}}s:4:"code";N;s:6:"markup";s:10:"<p>​</p>";s:13:"parsed-markup";s:10:"<p>​</p>";}";

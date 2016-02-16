@@ -1,0 +1,25 @@
+1453357419s:1166:"a:2:{s:5:"mtime";i:1453335260;s:7:"content";s:1111:"{% set sliders = __SELF__.sliders %}
+<div class="carousel slide" data-interval="4000">
+    <ol class="carousel-indicators">
+        {% for slider in sliders %}
+            <li data-target="#main-slider" data-slide-to="{{loop.index-1}}" class="{{ loop.first ? 'active' : '' }}"></li>
+        {% endfor %}
+    </ol>
+    <div class="carousel-inner">
+        {% for slider in sliders %}
+        <div class="item {{ loop.first ? 'active' : '' }}" style="background-image: url('{{ slider.picture.path }}')">
+            <div class="container">
+                <div class="row slide-margin">
+                    <div class="col-sm-6">
+                        <div class="carousel-content">
+                            <h1 class="animation animated-item-1">{{slider.judul}}</h1>
+                            <h2 class="animation animated-item-2">{{slider.deskripsi}}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.item-->
+        {% endfor %}
+    </div><!--/.carousel-inner-->
+</div><!--/.carousel-->
+<span class="shadow center-block"></span>";}";

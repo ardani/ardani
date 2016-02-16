@@ -1,0 +1,13 @@
+1453357419s:712:"a:6:{s:5:"mtime";i:1451231446;s:7:"content";s:235:"title = "post-tag"
+url = "/tags/:tag/:page?"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[blogTagSearch]
+tag = "{{ :tag }}"
+page = "{{ :page }}"
+resultsPerPage = 10
+==
+{% component 'blogTagSearch' %}";s:7:"viewBag";a:0:{}s:8:"settings";a:7:{s:5:"title";s:8:"post-tag";s:3:"url";s:17:"/tags/:tag/:page?";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";s:10:"components";a:1:{s:13:"blogTagSearch";a:3:{s:3:"tag";s:10:"{{ :tag }}";s:4:"page";s:11:"{{ :page }}";s:14:"resultsPerPage";s:2:"10";}}}s:4:"code";N;s:6:"markup";s:31:"{% component 'blogTagSearch' %}";}";

@@ -1,0 +1,139 @@
+1453357419s:7933:"a:7:{s:5:"mtime";i:1451225420;s:7:"content";s:2540:"[viewBag]
+title = "Kontak Kami"
+url = "/page/kontak-kami"
+layout = "static-layout"
+is_hidden = 0
+navigation_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+==
+<section id="contact-page">
+        <div class="container">
+            <div class="center">
+                <h2>KIRIM PESAN KE KAMI</h2>
+                <p class="lead">isi form berikut untuk mengirimkan pesan ke kami.</p>
+            </div>
+            <div class="row contact-wrap">
+                <div class="status alert alert-success" style="display: none"></div>
+                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                            <label>Nama *</label>
+                            <input type="text" name="name" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="email" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>No Telp</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Instansi</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label>Subjek *</label>
+                            <input type="text" name="subject" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Pesan *</label>
+                            <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Kirim Pesan</button>
+                        </div>
+                    </div>
+                </form>
+            </div><!--/.row-->
+        </div><!--/.container-->
+ </section>";s:7:"viewBag";a:7:{s:5:"title";s:11:"Kontak Kami";s:3:"url";s:17:"/page/kontak-kami";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:17:"navigation_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";}s:8:"settings";a:1:{s:10:"components";a:1:{s:7:"viewBag";a:7:{s:5:"title";s:11:"Kontak Kami";s:3:"url";s:17:"/page/kontak-kami";s:6:"layout";s:13:"static-layout";s:9:"is_hidden";s:1:"0";s:17:"navigation_hidden";s:1:"0";s:11:"robot_index";s:5:"index";s:12:"robot_follow";s:6:"follow";}}}s:4:"code";N;s:6:"markup";s:2372:"<section id="contact-page">
+        <div class="container">
+            <div class="center">
+                <h2>KIRIM PESAN KE KAMI</h2>
+                <p class="lead">isi form berikut untuk mengirimkan pesan ke kami.</p>
+            </div>
+            <div class="row contact-wrap">
+                <div class="status alert alert-success" style="display: none"></div>
+                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                            <label>Nama *</label>
+                            <input type="text" name="name" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="email" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>No Telp</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Instansi</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label>Subjek *</label>
+                            <input type="text" name="subject" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Pesan *</label>
+                            <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Kirim Pesan</button>
+                        </div>
+                    </div>
+                </form>
+            </div><!--/.row-->
+        </div><!--/.container-->
+ </section>";s:13:"parsed-markup";s:2372:"<section id="contact-page">
+        <div class="container">
+            <div class="center">
+                <h2>KIRIM PESAN KE KAMI</h2>
+                <p class="lead">isi form berikut untuk mengirimkan pesan ke kami.</p>
+            </div>
+            <div class="row contact-wrap">
+                <div class="status alert alert-success" style="display: none"></div>
+                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                            <label>Nama *</label>
+                            <input type="text" name="name" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="email" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>No Telp</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Instansi</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label>Subjek *</label>
+                            <input type="text" name="subject" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Pesan *</label>
+                            <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Kirim Pesan</button>
+                        </div>
+                    </div>
+                </form>
+            </div><!--/.row-->
+        </div><!--/.container-->
+ </section>";}";
