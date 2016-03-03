@@ -1,0 +1,5 @@
+columns:
+    nama_program_pendidikan:
+        label: 'Pogram Pendidikan'
+        type: text
+        searchable: true

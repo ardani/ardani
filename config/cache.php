@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => 'file',
+    'default' => 'memcached',
 
     /*
     |--------------------------------------------------------------------------
@@ -74,6 +74,6 @@ return [
     |
     */
 
-    'prefix' => 'october',
+    'prefix' => 'stikes',
 
 ];

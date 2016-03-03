@@ -1,0 +1,14 @@
+fields:
+    kode_tahun_ajaran:
+        label: 'Kode Tahun Ajaran'
+        span: left
+        placeholder: 'contoh 201520161'
+        required: 1
+        type: text
+        comment: 'masukan kombinasi dari tahun ajaran dan semester'
+    aktif:
+        label: Status
+        span: right
+        default: 1
+        required: 1
+        type: switch

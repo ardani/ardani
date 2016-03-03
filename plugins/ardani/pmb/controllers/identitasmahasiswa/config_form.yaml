@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Identitas Mahasiswa
+
+# Model Form Field configuration
+form: $/ardani/pmb/models/identitasmahasiswa/fields.yaml
+
+# Model Class name
+modelClass: Ardani\Pmb\Models\IdentitasMahasiswa
+
+# Default redirect location
+defaultRedirect: ardani/pmb/identitasmahasiswa
+
+# Create page
+create:
+    title: Create Identitas Mahasiswa
+    redirect: ardani/pmb/identitasmahasiswa/update/:id
+    redirectClose: ardani/pmb/identitasmahasiswa
+
+# Update page
+update:
+    title: Edit Identitas Mahasiswa
+    redirect: ardani/pmb/identitasmahasiswa
+    redirectClose: ardani/pmb/identitasmahasiswa
+
+# Preview page
+preview:
+    title: Preview Identitas Mahasiswa

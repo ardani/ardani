@@ -1,0 +1,14 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table ardani_pmb_identitas_mahasiswa'
+    - builder_table_create_ardani_pmb_identitas_mahasiswa.php
+1.0.3:
+    - 'Created table ardani_pmb_jalur_pendidikan'
+    - builder_table_create_ardani_pmb_jalur_pendidikan.php
+1.0.4:
+    - 'Created table ardani_pmb_tahun_ajaran'
+    - builder_table_create_ardani_pmb_tahun_ajaran.php
+1.0.5:
+    - 'Created table ardani_pmb_program_pendidikan'
+    - builder_table_create_ardani_pmb_program_pendidikan.php

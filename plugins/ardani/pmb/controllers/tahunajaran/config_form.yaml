@@ -1,0 +1,10 @@
+name: TahunAjaran
+form: ~/plugins/ardani/pmb/models/tahunajaran/fields.yaml
+modelClass: Ardani\Pmb\Models\TahunAjaran
+defaultRedirect: ardani/pmb/tahunajaran
+create:
+    redirect: 'ardani/pmb/tahunajaran/update/:id'
+    redirectClose: ardani/pmb/tahunajaran
+update:
+    redirect: ardani/pmb/tahunajaran
+    redirectClose: ardani/pmb/tahunajaran

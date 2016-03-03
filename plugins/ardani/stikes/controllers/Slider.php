@@ -12,6 +12,7 @@ class Slider extends Controller
         'Backend.Behaviors.FormController',
         'Backend.Behaviors.ListController'
     ];
+    public $requiredPermissions = ['ardani.stikes.slider'];
 
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';

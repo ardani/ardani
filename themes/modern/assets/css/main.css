@@ -34,7 +34,7 @@ h2{
 h3{
   font-size: 16px;
   color: #787878;
-  font-weight: 400;
+  font-weight: bold;
   line-height: 24px;
 }
 
@@ -2744,4 +2744,22 @@ p.info {
   background-image: url(../images/ppt.png);
   background-position: 0 50%;
   background-repeat: no-repeat;
+}
+.title-pmb {
+  border-bottom: 2px solid #42B549;
+}
+
+.form-group .form-control {
+  border-color: #A9A3A3;
+}
+
+label {
+  font-weight: 400;
+}
+
+.attachment-input {
+  position: absolute;
+  visibility: hidden;
+  width: 10px;
+  opacity: 0;
 }

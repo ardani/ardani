@@ -1,0 +1,29 @@
+plugin:
+    name: 'ardani.pmb::lang.plugin.name'
+    description: 'ardani.pmb::lang.plugin.description'
+    author: ardani
+    icon: oc-icon-flash
+    homepage: ''
+navigation:
+    PMB:
+        label: 'ardani.pmb::lang.plugin.name'
+        url: ardani/pmb/tahunajaran
+        icon: icon-building
+        order: 500
+        sideMenu:
+            tahunajaran:
+                label: 'Tahun Ajaran'
+                url: ardani/pmb/tahunajaran
+                icon: icon-tag
+            jalurpendidikan:
+                label: 'Jalur Pendidikan'
+                url: ardani/pmb/jalurpendidikan
+                icon: icon-tag
+            programpendidikan:
+                label: 'Program Pendidikan'
+                url: ardani/pmb/programpendidikan
+                icon: icon-tag
+            identitasmahasiswa:
+                label: 'Identitas Mahasiswa'
+                url: ardani/pmb/identitasmahasiswa
+                icon: icon-tag

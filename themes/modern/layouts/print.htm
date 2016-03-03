@@ -1,0 +1,50 @@
+[staticMenu]
+code = "top-menu"
+==
+<?php
+use Ardani\Stikes\Models\Settings;
+function onEnd() {
+	$this['no_telp'] = Settings::get('no_telp');
+	$this['nama_instansi'] = Settings::get('nama_instansi');
+	$this['no_fax'] = Settings::get('no_fax');
+	$this['alamat'] = Settings::get('alamat');
+	$this['email'] = Settings::get('email');
+}
+?>
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="STIKES Bhaktimulia adalah sekolah tinggi kesehatan dengan 
+    pendidikan yang baik dan berkualias, didukung dosen dosen yang terbaik bertujuan menciptakan lulusan terbaik dalam bidang kesehatan">
+    <meta name="keywords" content="Mahasiswa,Sekolah,Tinggi,STIKES,Kesehatan,
+    Bidan,AKBID,NERS,Perawat,Kediri,Penelitian,Jawa timur,Bhakti,Bakti,Mulia,">
+    <meta property="og:title" content="STIKES Bhakti Mulia">
+	<meta property="og:description" content="STIKES Bhaktimulia adalah sekolah tinggi kesehatan dengan 
+    pendidikan yang baik dan berkualias, didukung dosen dosen yang terbaik bertujuan menciptakan lulusan terbaik dalam bidang kesehatan">
+	<meta property="og:image" content="{{ logo-kecil.png | media }}">
+    <meta name="author" content="STIKES Bhakti Mulia">
+    <title>STIKES BHAKTI MULIA - {{ this.page.title }} </title>
+    <link rel="stylesheet" href="{{ 'assets/css/print.css' |theme}}" type="text/css" media="all" charset="utf-8">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ 'assets/favicon/apple-icon-57x57.png' | theme }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ 'assets/favicon/apple-icon-60x60.png' | theme }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ 'assets/favicon/apple-icon-72x72.png' | theme }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ 'assets/favicon/apple-icon-76x76.png' | theme }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ 'assets/favicon/apple-icon-114x114.png' | theme }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ 'assets/favicon/apple-icon-120x120.png' | theme }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ 'assets/favicon/apple-icon-144x144.png' | theme }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ 'assets/favicon/apple-icon-152x152.png' | theme }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ 'assets/favicon/apple-icon-180x180.png' | theme }}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{ 'assets/favicon/android-icon-192x192.png' | theme }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/favicon/favicon-32x32.png' | theme }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ 'assets/favicon/favicon-96x96.png' | theme }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/favicon/favicon-16x16.png' | theme }}">
+</head>
+<body>
+<section id="content" class="container">
+     {% page %}
+</section>
+</body>
+</html>
