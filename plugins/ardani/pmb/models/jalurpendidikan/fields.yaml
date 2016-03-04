@@ -6,7 +6,7 @@ fields:
         placeholder: 'nama jalur pendidikan'
         required: 1
         type: text
-    tahunajaran:
+    tahun_ajaran:
         label: 'Tahun Ajaran'
         nameFrom: kode_tahun_ajaran
         oc.commentPosition: ''

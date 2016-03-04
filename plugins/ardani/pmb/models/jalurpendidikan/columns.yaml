@@ -12,8 +12,8 @@ columns:
         label: 'Tanggal Akhir'
         type: date
         searchable: true
-    tahunajaran:
+    tahun_ajaran:
         label: 'Tahun Ajaran'
         type: text
         select: kode_tahun_ajaran
-        relation: tahunajaran
+        relation: tahun_ajaran

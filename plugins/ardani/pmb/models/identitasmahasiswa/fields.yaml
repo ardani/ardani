@@ -215,7 +215,7 @@ tabs:
             span: full
             type: text
             tab: 'Data Sekolah'
-        rata_nilai_un:
+        rata_nilai_uan:
             label: 'Rata-rata Nilai UN'
             oc.commentPosition: ''
             span: full
