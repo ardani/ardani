@@ -1,0 +1,149 @@
+title = "Cetak Formulir Pendaftaran"
+url = "/page/pmb/cetak-formulir-pendaftaran/:code"
+layout = "print"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[Pmb]
+code = "{{ :code }}"
+
+[CetakFormulir]
+code = "{{ :code }}"
+==
+<div id="main">
+    <div class="kop" style="text-align: center">
+        <div class="logo">
+            <img src="{{ 'logo-kecil.png' | media }}" width="80">
+        </div>
+        <h2>PENDAFTARAN MAHASISWA BARU STIKES BHAKTI MULIA</h2>
+        <p style="font-style: italic;margin: 0px">Jl. Matahari No. 1 Tulungrejo, Pare – Kediri, Jawa Timur 64212 <br>
+            No Telp : (0354) 395 455 No Fax : (0354) 395 455 Email : stikesbhaktimulia@gmail.com</p>
+        <span>{{jalur.nama_jalur_pendidikan }} Periode {{jalur.tanggal_mulai}} Sampai {{jalur.tanggal_akhir}}</span>
+    </div>
+<div style="clear: both"></div>
+    <br>
+    <h3 class="title-pmb"></h3>
+    <table>
+        <caption>Informasi Calon Mahasiswa </caption>
+        <tbody>
+        <tr>
+            <td class="label">No Pendaftaran</td>
+            <td>: {{mahasiswa.no_pendaftaran}}</td>
+        </tr>
+        <tr>
+            <td>Nama Lengkap</td>
+            <td>: {{mahasiswa.nama_lengkap}}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>: {{mahasiswa.email}}</td>
+        </tr>
+        <tr>
+            <td>Tempat Tanggal Lahir</td>
+            <td>: {{mahasiswa.tempat_lahir}}, {{mahasiswa.tanggal_lahir | date('d F Y')}}</td>
+        </tr>
+        <tr>
+            <td>Jenis Kelamin</td>
+            <td>: {{mahasiswa.jenis_kelamin}}</td>
+        </tr>
+        <tr>
+            <td>Tinggi dan Berat</td>
+            <td>: {{mahasiswa.tinggi}} cm , {{mahasiswa.berat}} kg</td>
+        </tr>
+        <tr>
+            <td>Golongan Darah</td>
+            <td>: {{mahasiswa.golongan_darah}}</td>
+        </tr>
+        <tr>
+            <td>No Telp/Hp</td>
+            <td>: {{mahasiswa.no_telp}}</td>
+        </tr>
+        <tr>
+            <td>Program Pendidikan</td>
+            <td>: {{mahasiswa.program_pendidikan.nama_program_pendidikan}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <table>
+        <caption>Informasi Orang Tua</caption>
+        <tbody>
+        <tr>
+            <td class="label">Nama Ayah</td>
+            <td>: {{mahasiswa.nama_ayah}}</td>
+        </tr>
+        <tr>
+            <td>Pekerjaan Ayah</td>
+            <td>: {{mahasiswa.pekerjaan_ayah}}</td>
+        </tr>
+        <tr>
+            <td>Nama Ibu</td>
+            <td>: {{mahasiswa.nama_ibu}}</td>
+        </tr>
+        <tr>
+            <td>Pekerjaan Ibu</td>
+            <td>: {{mahasiswa.pekerjaan_ibu}}</td>
+        </tr>
+        <tr>
+            <td>Status Orang Tua</td>
+            <td>: {{mahasiswa.status_orang_tua}}</td>
+        </tr>
+        <tr>
+            <td>No Telp Orang Tua</td>
+            <td>: {{mahasiswa.no_telp_orang_tua}}</td>
+        </tr>
+        <tr>
+            <td>Alamat Orang Tua</td>
+            <td>: {{mahasiswa.alamat_orang_tua}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="page-break"></div>
+    <table>
+        <caption>Informasi Asal Sekolah</caption>
+        <tbody>
+        <tr>
+            <td class="label">Nama Sekolah</td>
+            <td>: {{mahasiswa.nama_sekolah}}</td>
+        </tr>
+        <tr>
+            <td>Jenis Sekolah</td>
+            <td>: {{mahasiswa.jenis_sekolah}}</td>
+        </tr>
+        <tr>
+            <td>Jurusan</td>
+            <td>: {{mahasiswa.jurusan}}</td>
+        </tr>
+        <tr>
+            <td>Alamat Sekolah</td>
+            <td>: {{mahasiswa.alamat_sekolah}}</td>
+        </tr>
+        <tr>
+            <td>Tahun Lulus</td>
+            <td>: {{mahasiswa.lulus}}</td>
+        </tr>
+        <tr>
+            <td>Rata Nilai UN</td>
+            <td>: {{mahasiswa.rata_nilai_uan}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <h4>Kelengkapan Berkas</h4>
+    <p>daftar berkas dibawah ini harus dibawa dan serahkan ke petugas pendaftaraan saat test</p>
+    <ol>
+        <li><span class="text">Foto copy ijazah/STTB yang dilegalisir/surat keterangan lulus <br>
+                dari kepala sekolah 2 lembar</span> <span class="check"></span></li>
+        <li><span class="text">Foto copy DANUN yang dilegalisir 2 lembar</span> <span class="check"></span></li>
+        <li><span class="text">Pas foto hitam putih terbaru ukuran 4x6 ( 5 lembar )</span> <span class="check"></span></li>
+    </ol>
+    <div class="foto">
+        <img src="{{ mahasiswa.photo.thumb(200,auto) }}">
+    </div>
+    <div class="sign">
+        <p>..............,............... {{ "now"|date("Y") }}</p>
+        <br>
+        <br>
+        <p>..............................</p>
+        <p>( {{mahasiswa.nama_lengkap}} )</p>
+    </div>
+</div>
