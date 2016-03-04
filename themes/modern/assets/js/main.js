@@ -59,4 +59,7 @@ jQuery(function($) {'use strict',
 		visible: 0,
 		mousePause: 1
 	});
+	$('.datepicker').datepicker({
+		format: 'yyyy-mm-dd',
+	});
 });

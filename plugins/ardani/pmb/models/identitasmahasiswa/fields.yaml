@@ -1,0 +1,223 @@
+fields:
+    section1:
+        label: 'Data Lengkap Calon Mahasiswa'
+        span: full
+        type: section
+    no_pendaftaran:
+        label: 'No Pendaftaran'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    kode_generate:
+        label: 'Kode Generate'
+        oc.commentPosition: ''
+        span: right
+        type: text
+    nama_lengkap:
+        label: 'Nama Lengkap'
+        oc.commentPosition: ''
+        span: left
+        required: 1
+        type: text
+    jenis_kelamin:
+        label: 'Jenis Kelamin'
+        oc.commentPosition: ''
+        options:
+            L: laki-laki
+            P: perempuan
+        span: right
+        placeholder: 'pilih jenis kelamin'
+        default: ''
+        required: 1
+        type: dropdown
+    tempat_lahir:
+        label: 'Tempat Lahir'
+        oc.commentPosition: ''
+        span: left
+        type: text
+    tanggal_lahir:
+        label: 'Tanggal Lahir'
+        oc.commentPosition: ''
+        mode: date
+        span: auto
+        required: 1
+        type: datepicker
+    agama:
+        label: Agama
+        oc.commentPosition: ''
+        options:
+            islam: Islam
+            kristen: Kristen
+            hindu: Hindu
+            budha: Budha
+            katolik: Katolik
+        span: auto
+        required: 1
+        type: dropdown
+    email:
+        label: Email
+        oc.commentPosition: ''
+        span: right
+        type: text
+    berat:
+        label: 'Berat Badan'
+        oc.commentPosition: ''
+        span: left
+        type: text
+    tinggi:
+        label: 'Tinggi Badan'
+        oc.commentPosition: ''
+        span: right
+        type: text
+    no_telp:
+        label: 'No Telp / Hp'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    golongan_darah:
+        label: 'Golongan Darah'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    program_pendidikan_section:
+        label: 'Program Pendidikan'
+        span: full
+        type: section
+    program_pendidikan:
+        label: 'Program Pendidikan'
+        span: auto
+        oc.commentPosition: ''
+        nameFrom: nama_program_pendidikan
+        descriptionFrom: description
+        type: relation
+    jalur_pendidikan:
+        label: 'Jalur Pendidikan'
+        span: auto
+        oc.commentPosition: ''
+        nameFrom: nama_jalur_pendidikan
+        descriptionFrom: description
+        type: relation
+    photo:
+        label: 'Foto Profile'
+        type: fileupload
+        mode: image
+        span: left
+        imageHeight: 260
+        imageWidth: 260
+    diterima:
+        label: 'Status Pendaftaran'
+        oc.commentPosition: ''
+        options:
+            0: Tidak Diterima
+            1: Diterima
+        span: right
+        placeholder: 'pilih keterangan'
+        default: ''
+        required: 1
+        type: dropdown
+tabs:
+    fields:
+        data_orang_tua:
+            label: 'Data Orang Tua'
+            span: full
+            type: section
+            tab: 'Data Orang Tua'
+        nama_ayah:
+            label: 'Nama Ayah'
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: 'Data Orang Tua'
+        pekerjaan_ayah:
+            label: 'Pekerjaan Ayah'
+            oc.commentPosition: ''
+            options:
+                PNS: PNS
+                TNI: TNI
+                PORLI: PORLI
+                petani: Petani
+                wiraswasta: Wiraswasta
+                'karyawan swasta': 'Karyawan Swasta'
+            span: right
+            type: dropdown
+            tab: 'Data Orang Tua'
+        nama_ibu:
+            label: 'Nama Ibu'
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: 'Data Orang Tua'
+        pekerjaan_ibu:
+            label: 'Pekerjaan Ibu'
+            oc.commentPosition: ''
+            options:
+                PNS: PNS
+                TNI: TNI
+                PORLI: PORLI
+                petani: Petani
+                wiraswasta: Wiraswasta
+                'karyawan swasta': 'Karyawan Swasta'
+            span: auto
+            type: dropdown
+            tab: 'Data Orang Tua'
+        no_telp_orang_tua:
+            label: 'No Telp/Hp Orang Tua'
+            oc.commentPosition: ''
+            span: auto
+            type: text
+            tab: 'Data Orang Tua'
+        status_orang_tua:
+            label: 'Status Orang Tua'
+            oc.commentPosition: ''
+            options:
+                kandung: Kandung
+                angkat: Angkat/Wali
+            span: auto
+            required: 1
+            type: dropdown
+            tab: 'Data Orang Tua'
+        alamat_orang_tua:
+            label: 'Alamat Rumah'
+            oc.commentPosition: ''
+            span: full
+            type: text
+            tab: 'Data Orang Tua'
+        nama_sekolah:
+            label: 'Nama Sekolah'
+            oc.commentPosition: ''
+            span: left
+            type: text
+            tab: 'Data Sekolah'
+        jenis_sekolah:
+            label: 'Jenis Sekolah'
+            oc.commentPosition: ''
+            options:
+                SMA: SMA
+                SMK: SMK
+            span: right
+            type: dropdown
+            tab: 'Data Sekolah'
+        jurusan:
+            label: Jurusan
+            oc.commentPosition: ''
+            span: auto
+            type: text
+            tab: 'Data Sekolah'
+        lulus:
+            label: 'Tahun Lulus'
+            oc.commentPosition: ''
+            span: auto
+            type: text
+            tab: 'Data Sekolah'
+        alamat_sekolah:
+            label: 'Alamat Lengkap Sekolah'
+            oc.commentPosition: ''
+            span: full
+            type: text
+            tab: 'Data Sekolah'
+        rata_nilai_un:
+            label: 'Rata-rata Nilai UN'
+            oc.commentPosition: ''
+            span: full
+            type: text
+            tab: 'Data Sekolah'

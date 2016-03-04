@@ -1,0 +1,8 @@
+columns:
+    kode_tahun_ajaran:
+        label: 'Kode Tahun Ajaran'
+        type: text
+        searchable: true
+    aktif:
+        label: Status
+        type: switch

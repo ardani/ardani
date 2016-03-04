@@ -1,0 +1,19 @@
+columns:
+    nama_jalur_pendidikan:
+        label: 'Nama Jalur Pendidikan'
+        type: text
+        searchable: true
+        sortable: true
+    tanggal_mulai:
+        label: 'Tanggal Mulai'
+        type: date
+        searchable: true
+    tanggal_akhir:
+        label: 'Tanggal Akhir'
+        type: date
+        searchable: true
+    tahunajaran:
+        label: 'Tahun Ajaran'
+        type: text
+        select: kode_tahun_ajaran
+        relation: tahunajaran

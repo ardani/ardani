@@ -1,0 +1,11 @@
+name: ProgramPendidikan
+modelClass: Ardani\Pmb\Models\ProgramPendidikan
+form: ~/plugins/ardani/pmb/models/programpendidikan/fields.yaml
+defaultRedirect: ardani/pmb/programpendidikan
+create:
+    redirect: 'ardani/pmb/programpendidikan/update/:id'
+    redirectClose: ardani/pmb/programpendidikan
+update:
+    redirect: ardani/pmb/programpendidikan
+    redirectClose: ardani/pmb/programpendidikan
+preview: {  }

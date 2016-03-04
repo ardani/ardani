@@ -1,0 +1,11 @@
+fields:
+    nama_program_pendidikan:
+        label: 'Program Pendidikan'
+        oc.commentPosition: ''
+        span: left
+        required: 1
+        type: text
+    aktif:
+        label: Status
+        span: auto
+        type: switch

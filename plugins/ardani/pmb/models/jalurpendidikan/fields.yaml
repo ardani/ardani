@@ -1,0 +1,29 @@
+fields:
+    nama_jalur_pendidikan:
+        label: 'Jalur Pendidikan'
+        oc.commentPosition: ''
+        span: auto
+        placeholder: 'nama jalur pendidikan'
+        required: 1
+        type: text
+    tahunajaran:
+        label: 'Tahun Ajaran'
+        nameFrom: kode_tahun_ajaran
+        oc.commentPosition: ''
+        descriptionFrom: description
+        span: right
+        type: relation
+    tanggal_mulai:
+        label: 'Tanggal Mulai'
+        oc.commentPosition: ''
+        mode: date
+        span: left
+        required: 1
+        type: datepicker
+    tanggal_akhir:
+        label: 'Tanggal Akhir'
+        oc.commentPosition: ''
+        mode: date
+        span: right
+        required: 1
+        type: datepicker

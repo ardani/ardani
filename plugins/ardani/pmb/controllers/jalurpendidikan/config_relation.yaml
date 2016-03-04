@@ -1,0 +1,12 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+tahunajaran:
+    label: Tahun Ajaran
+    view:
+        list: $/ardani/pmb/models/tahunajaran/columns.yaml
+        toolbarButtons: create|delete
+    manage:
+        form: $/ardani/pmb/models/tahunajaran/fields.yaml
+        recordsPerPage: 10

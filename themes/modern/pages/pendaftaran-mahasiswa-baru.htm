@@ -5,4 +5,209 @@ description = "form pendaftaran mahasiswa baru"
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
+
+[Pmb]
 ==
+{% if isOpen %}
+<div class="row">
+    <div class="col-md-6">
+         <h2>FORM PENDAFTARAN MAHASISWA BARU {{jalur.nama_jalur_pendidikan | uppercase }}
+             PERIODE {{jalur.tanggal_mulai}} SAMPAI {{jalur.tanggal_akhir}}
+        </h2>
+        <p>Isi dan lengkapi formulir dibawah ini dengan data diri calon Mahasiswa dengan baik
+         dan benar. setelah melakukan pengisian form maka calon Mahasiswa dapat mencetak sendiri
+            formulir pendaftaran.</p>
+    </div>
+</div>
+        <div id="result">{{ result | raw }}</div>
+        {{form_open({request: 'Pmb::onSave',files: true})}}
+        <div class="col-md-6">
+            <h3 class="title-pmb">Informasi Calon Mahasiswa</h3>
+            <div class="form-group">
+                <label for="jurusan">Foto Calon Mahasiswa *</label>
+                <input type="file" class="form-control" name="photo" />
+            </div>
+            <div class="form-group">
+                <label for="namaLengkap">Nama Lengkap *</label>
+                <input type="text" name="nama_lengkap" class="form-control" placeholder="nama lengkap" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="text" name="email" class="form-control" placeholder="email" required>
+            </div>
+            <div class="form-group">
+                <label for="tempatTanggaLahir">Tempat,Tanggal Lahir *</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" name="tempat_lahir" class="form-control" placeholder="tempat lahir" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" name="tanggal_lahir" class="form-control datepicker col-md-6" placeholder="tanggal lahir" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="jenisKelamin">Jenis Kelamin</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <select class="form-control" name="jenis_kelamin">
+                            <option value="L">Laki-Laki</option>
+                            <option value="P">Perempuan</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tinggi">Tinggi dan Berat *</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input type="text" name="tinggi" class="form-control" required>
+                            <div class="input-group-addon">cm</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input type="text" name="berat" class="form-control" required>
+                            <div class="input-group-addon">kg</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group ">
+                <label for="golonganDarah">Golongan Darah</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" name="golongan_darah" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="agama">Agama</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <select class="form-control" name="agama">
+                            <option value="islam">Islam</option>
+                            <option value="kristen">Kristen</option>
+                            <option value="katolik">Katolik</option>
+                            <option value="budha">Budha</option>
+                            <option value="hindu">Hindu</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="noTelp">No Telp *</label>
+                <input type="text" name="no_telp" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="noTelp">Program Pendidikan</label>
+                <select class="form-control" name="program_pendidikan_id">
+                    {% for program_pendidikan in program_pendidikans %}
+                        <option value="{{ program_pendidikan.id }}">{{ program_pendidikan.nama_program_pendidikan }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <h3 class="title-pmb">Informasi Orang Tua</h3>
+            <div class="form-group">
+                <label for="namaAyah">Nama Ayah *</label>
+                <input type="text" name="nama_ayah" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="pekerjaanAyah">Pekerjaan Ayah</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <select name="pekerjaan_ayah" class="form-control">
+                            <option value="PNS">PNS</option>
+                            <option value="TNI">TNI</option>
+                            <option value="PORLI">PORLI</option>
+                            <option value="karyawan swasta">Karyawan Swasta</option>
+                            <option value="wiraswasta">Wiraswasta</option>
+                            <option value="petani">Petani</option>
+                            <option value="tidak bekerja">Tidak Bekerja</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="namaIbu">Nama Ibu *</label>
+                <input type="text" name="nama_ibu" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="pekerjaanIbu">Pekerjaan Ibu</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <select name="pekerjaan_ibu" class="form-control">
+                            <option value="PNS">PNS</option>
+                            <option value="TNI">TNI</option>
+                            <option value="PORLI">PORLI</option>
+                            <option value="karyawan swasta">Karyawan Swasta</option>
+                            <option value="wiraswasta">Wiraswasta</option>
+                            <option value="petani">Petani</option>
+                            <option value="tidak bekerja">Tidak Bekerja</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="statusOrangTua">Status Orang Tua</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <select name="status_orang_tua" class="form-control">
+                            <option value="kandung">Orang Tua Kandung</option>
+                            <option value="angkat">Orang Tua Angkat</option>
+                            <option value="wali">Orang Tua Wali</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="noTelpOrangTua">No Telp Orang Tua *</label>
+                <input type="text" name="no_telp_orang_tua" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="alamatOrangTua">Alamat Orang Tua *</label>
+                <textarea name="alamat_orang_tua" class="form-control" rows="3" required></textarea>
+            </div>
+            <button class="btn btn-success btn-block" type="submit">Kirim</button>
+        </div>
+        <div class="col-md-6">
+            <h3 class="title-pmb">Informasi Sekolah</h3>
+            <div class="form-group">
+                <label for="namaSekolah">Nama Sekolah *</label>
+                <input type="text" name="nama_sekolah" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="jurusan">Jurusan *</label>
+                <input type="text" name="jurusan" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="jurusan">Jenis Sekolah</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <select name="jenis_sekolah" class="form-control">
+                            <option value="SMA">SMA</option>
+                            <option value="SMK">SMK</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="alamatOrangTua">Alamat Sekolah *</label>
+                <textarea name="alamat_sekolah" class="form-control" rows="3" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="tahunLulus">Tahun Lulus *</label>
+                <input type="number" name="lulus" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="jurusan">Rata Nilai UN *</label>
+                <input type="text" name="rata_nilai_uan" class="form-control" required>
+            </div>
+        </div>
+    </form>
+{% else %}
+    <div class="alert alert-warning" role="alert">
+        <strong>Maaf</strong> Pendaftaran Mahasiswa Baru Belum Dibuka.
+    </div>
+{% endif %}

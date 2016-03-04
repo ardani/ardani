@@ -399,17 +399,13 @@ items:
                     isExternal: '0'
             -
                 title: Pendaftaran
-                nesting: '0'
-                type: static-page
-                url: ''
+                type: cms-page
                 code: ''
-                reference: page-mahasiswa-pendaftaran
-                cmsPage: ''
-                replace: '0'
+                reference: pendaftaran-mahasiswa-baru
                 viewBag:
-                    isExternal: '0'
                     isHidden: '0'
                     cssClass: ''
+                    isExternal: '0'
     -
         title: Alumni
         nesting: ''

@@ -1,0 +1,13 @@
+{% if result %}
+<div class="alert alert-success" role="alert">
+    <strong>{{ nama_lengkap }},Pendaftaran Berhasil</strong> Simpan Informasi Berikut.
+    No Pendaftaran : <strong>{{ no_pendaftaran }}</strong> Kode : <strong>{{ kode_generate}}</strong>
+    (simpan Kode untuk melihat hasil pengumuman) <br>
+    klik <a href="{{ 'cetak-formulir-pendaftaran'|page({ code: no_pendaftaran~kode_generate }) }}">disini</a>
+    untuk mencetak formulir pendaftaran.
+</div>
+{% else %}
+<div class="alert alert-warning" role="alert">
+    <strong>Maaf</strong> Pendaftaran Mahasiswa Gagal Disimpan. {{message}}
+</div>
+{% endif %}

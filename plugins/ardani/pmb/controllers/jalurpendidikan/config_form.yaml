@@ -1,0 +1,10 @@
+name: JalurPendidikan
+form: ~/plugins/ardani/pmb/models/jalurpendidikan/fields.yaml
+modelClass: Ardani\Pmb\Models\JalurPendidikan
+defaultRedirect: ardani/pmb/jalurpendidikan
+create:
+    redirect: 'ardani/pmb/jalurpendidikan/update/:id'
+    redirectClose: ardani/pmb/jalurpendidikan
+update:
+    redirect: ardani/pmb/jalurpendidikan
+    redirectClose: ardani/pmb/jalurpendidikan

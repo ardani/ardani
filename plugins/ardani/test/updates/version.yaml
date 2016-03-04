@@ -1,8 +1,0 @@
-1.0.1:
-    - 'Initialize plugin.'
-1.0.2:
-    - 'Drop table ardani_test_user'
-    - builder_table_delete_ardani_test_user.php
-1.0.3:
-    - 'Created table ardani_test_testing'
-    - builder_table_create_ardani_test_testing.php

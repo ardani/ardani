@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'id',
 
     /*
     |--------------------------------------------------------------------------
@@ -81,7 +81,7 @@ return [
     |
     */
 
-    'key' => 'CHANGE_ME!!!!!!!',
+    'key' => 'DFHSiVXHo3kHVhBvlvpUL6yOze8AJgBM',
 
     'cipher' => MCRYPT_RIJNDAEL_128,
 

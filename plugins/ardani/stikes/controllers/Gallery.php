@@ -13,6 +13,8 @@ class Gallery extends Controller
         'Backend.Behaviors.ListController'
     ];
 
+    public $requiredPermissions = ['ardani.stikes.gallery'];
+
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
 
