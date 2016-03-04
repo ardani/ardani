@@ -5,7 +5,6 @@ static-pages:
         page-fasilitas-kampus: {  }
         page-layanan-siakad-online: {  }
     page-kampus:
-        kampus-staf-pengajar: {  }
         page-kampus-jurusan-dan-fakultas: {  }
         page-kampus-visi-dan-misi: {  }
         page-kampus-struktur-organisasi: {  }
@@ -13,4 +12,22 @@ static-pages:
         page-mahasiswa-syarat-pendaftaran: {  }
         page-mahasiswa-beasiswa-dan-biaya: {  }
         page-mahasiswa-pendaftaran: {  }
+    akbid:
+        page-akbid-visi-dan-misi: {  }
+        page-akbid-struktur-oraganisasi: {  }
+        page-akbid-kerjasama: {  }
+    page-ners:
+        page-ners-struktur-organisasi: {  }
+        page-ners-profil-ners: {  }
+    page-beasiswa:
+        page-beasiswa-peningkatan-prestasi-akademik-ppa: {  }
+        page-beasiswa-bantuan-biaya-pendidikan-ppa-bbp-ppa: {  }
+        page-beasiswa-beasiswa-yayasan: {  }
+    page-kemitraan:
+        page-kemitraan-fasilitas-kampus: {  }
+        page-kemitraan-lahan-praktek: {  }
+        page-kemitraan-lahan-kerja: {  }
     kontak-kami: {  }
+    page-alumni:
+        page-alumni-informasi-terkini: {  }
+        page-alumni-lowongan-kerja: {  }

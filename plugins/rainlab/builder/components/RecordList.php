@@ -1,17 +1,17 @@
 <?php namespace RainLab\Builder\Components;
 
+use Lang;
 use Cms\Classes\Page;
 use Cms\Classes\ComponentBase;
 use RainLab\Builder\Classes\ComponentHelper;
-use Lang;
-use Exception;
 use SystemException;
+use Exception;
 
 class RecordList extends ComponentBase
 {
     /**
      * A collection of records to display
-     * @var Collection
+     * @var \October\Rain\Database\Collection
      */
     public $records;
 
@@ -271,7 +271,7 @@ class RecordList extends ComponentBase
             $model = $model->$scope();
         }
 
-        $this->sort($model);
+        $model = $this->sort($model);
         $records = $this->paginate($model);
 
         return $records;
@@ -319,7 +319,7 @@ class RecordList extends ComponentBase
     {
         $sortColumn = trim($this->property('sortColumn'));
         if (!strlen($sortColumn)) {
-            return;
+            return $model;
         }
 
         $sortDirection = trim($this->property('sortDirection'));
@@ -330,7 +330,6 @@ class RecordList extends ComponentBase
 
         // Note - no further validation of the sort column
         // value is performed here, relying to the ORM sanitizing.
-
-        $model->orderBy($sortColumn, $sortDirection);
+        return $model->orderBy($sortColumn, $sortDirection);
     }
 }
