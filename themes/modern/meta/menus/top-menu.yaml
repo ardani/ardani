@@ -108,17 +108,17 @@ items:
         items:
             -
                 title: 'Visi dan Misi'
-                nesting: ''
-                type: url
-                url: '#'
+                nesting: '0'
+                type: static-page
+                url: ''
                 code: ''
-                reference: ''
+                reference: page-akbid-visi-dan-misi
                 cmsPage: ''
-                replace: ''
+                replace: '0'
                 viewBag:
-                    isExternal: '0'
                     isHidden: '0'
                     cssClass: ''
+                    isExternal: '0'
             -
                 title: 'Struktur Organisasi'
                 nesting: ''
@@ -198,6 +198,59 @@ items:
                     isExternal: '0'
                     isHidden: '0'
                     cssClass: ''
+    -
+        title: Beasiswa
+        nesting: ''
+        type: url
+        url: '#'
+        code: ''
+        reference: ''
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: dropdown
+            isExternal: '0'
+        items:
+            -
+                title: PPA
+                nesting: '0'
+                type: static-page
+                url: ''
+                code: ''
+                reference: page-beasiswa-peningkatan-prestasi-akademik-ppa
+                cmsPage: ''
+                replace: '0'
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'BBP PPA'
+                nesting: '0'
+                type: static-page
+                url: ''
+                code: ''
+                reference: page-beasiswa-bantuan-biaya-pendidikan-ppa-bbp-ppa
+                cmsPage: ''
+                replace: '0'
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: 'Beasiswa Yayasan'
+                nesting: '0'
+                type: static-page
+                url: ''
+                code: ''
+                reference: page-beasiswa-beasiswa-yayasan
+                cmsPage: ''
+                replace: '0'
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
     -
         title: Kemitraan
         nesting: ''
@@ -332,7 +385,7 @@ items:
                     isHidden: '0'
                     cssClass: ''
             -
-                title: 'Beasiswa dan Biaya Kuliah'
+                title: 'Biaya Kuliah'
                 nesting: '0'
                 type: static-page
                 url: ''
@@ -341,9 +394,9 @@ items:
                 cmsPage: ''
                 replace: '0'
                 viewBag:
-                    isExternal: '0'
                     isHidden: '0'
                     cssClass: ''
+                    isExternal: '0'
             -
                 title: Pendaftaran
                 type: cms-page
@@ -369,17 +422,17 @@ items:
         items:
             -
                 title: 'Informasi terkini'
-                nesting: ''
-                type: url
-                url: '#'
+                nesting: '0'
+                type: static-page
+                url: ''
                 code: ''
-                reference: ''
+                reference: page-alumni-informasi-terkini
                 cmsPage: ''
-                replace: ''
+                replace: '0'
                 viewBag:
-                    isExternal: '0'
                     isHidden: '0'
                     cssClass: ''
+                    isExternal: '0'
             -
                 title: 'Uji Kompetensi D-III Bidan'
                 nesting: ''
@@ -408,17 +461,17 @@ items:
                     cssClass: ''
             -
                 title: 'Lowongan Kerja'
-                nesting: ''
-                type: url
-                url: '#'
+                nesting: '0'
+                type: static-page
+                url: ''
                 code: ''
-                reference: ''
+                reference: page-alumni-lowongan-kerja
                 cmsPage: ''
-                replace: ''
+                replace: '0'
                 viewBag:
-                    isExternal: '0'
                     isHidden: '0'
                     cssClass: ''
+                    isExternal: '0'
     -
         title: 'BEM Stikes BM'
         nesting: ''
@@ -446,6 +499,19 @@ items:
             isHidden: '0'
             cssClass: dropdown
         items:
+            -
+                title: Kontak
+                nesting: '0'
+                type: static-page
+                url: ''
+                code: ''
+                reference: kontak-kami
+                cmsPage: ''
+                replace: '0'
+                viewBag:
+                    isExternal: '0'
+                    isHidden: '0'
+                    cssClass: ''
             -
                 title: 'Digital Library'
                 nesting: '0'
@@ -511,16 +577,3 @@ items:
                     isExternal: '0'
                     isHidden: '0'
                     cssClass: ''
-    -
-        title: Kontak
-        nesting: '0'
-        type: static-page
-        url: ''
-        code: ''
-        reference: kontak-kami
-        cmsPage: ''
-        replace: '0'
-        viewBag:
-            isExternal: '0'
-            isHidden: '0'
-            cssClass: ''
