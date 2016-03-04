@@ -42,7 +42,7 @@ function onEnd() {
     <link rel="icon" type="image/png" sizes="96x96" href="{{ 'assets/favicon/favicon-96x96.png' | theme }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/favicon/favicon-16x16.png' | theme }}">
 </head>
-<body>
+<body onload="window.print()">
 <section id="content" class="container">
      {% page %}
 </section>
