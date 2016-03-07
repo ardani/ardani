@@ -1,0 +1,5 @@
+export:
+    title: Export Identitas Mahasiswa
+    modelClass: Ardani\Pmb\Models\IdentitasMahasiswaExport
+    list: $/ardani/pmb/models/identitasmahasiswaexport/columns.yaml
+    redirect: ardani/pmb/identitasmahasiswa
