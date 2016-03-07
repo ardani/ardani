@@ -37,9 +37,9 @@ class Plugin extends PluginBase
     {
         return [
             'ardani.pmb.tahun_ajaran' => ['label' => 'Manage Tahun Ajaran', 'tab' => 'PMB'],
-            'ardani.stikes.jalur_pendidikan' => ['label' => 'Manage Jalur Pendidikan', 'tab' => 'PMB'],
-            'ardani.stikes.program_pendidikan' => ['label' => 'Manage Program Pendidikan', 'tab' => 'PMB'],
-            'ardani.stikes.identitas_mahasiswa' => ['label' => 'Manage Identitas Mahasiswa', 'tab' => 'PMB'],
+            'ardani.pmb.jalur_pendidikan' => ['label' => 'Manage Jalur Pendidikan', 'tab' => 'PMB'],
+            'ardani.pmb.program_pendidikan' => ['label' => 'Manage Program Pendidikan', 'tab' => 'PMB'],
+            'ardani.pmb.identitas_mahasiswa' => ['label' => 'Manage Identitas Mahasiswa', 'tab' => 'PMB'],
         ];
     }
 }
