@@ -1,0 +1,10 @@
+name: PendaftaranWisuda
+modelClass: Ardani\Wisuda\Models\PendaftaranWisuda
+form: $/ardani/wisuda/models/pendaftaranwisuda/fields.yaml
+defaultRedirect: ardani/wisuda/pendaftaranwisuda
+create:
+    redirect: 'ardani/wisuda/pendaftaranwisuda/update/:id'
+    redirectClose: ardani/wisuda/pendaftaranwisuda
+update:
+    redirect: ardani/wisuda/pendaftaranwisuda
+    redirectClose: ardani/wisuda/pendaftaranwisuda

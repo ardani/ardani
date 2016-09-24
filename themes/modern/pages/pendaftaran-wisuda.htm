@@ -1,0 +1,52 @@
+title = "Pendaftaran Wisuda"
+url = "/pendaftaran-wisuda"
+layout = "default"
+is_hidden = 0
+robot_index = "index"
+robot_follow = "follow"
+
+[DaftarWisuda]
+==
+<div class="row">
+    <div class="col-md-6">
+        <h2>FORM PENDAFTARAN WISUDA TAHUN AJARAN {{tahun_ajaran.kode_tahun_ajaran | uppercase }}
+        </h2>
+        <p>Isi dan lengkapi formulir dibawah ini dengan data diri Mahasiswa dengan baik
+            dan benar. sertakan bukti pembayaran yang discan dalam <strong>format image jpg,jpeg,bmp,png</strong></p>
+    </div>
+</div>
+<div id="result">{{ result | raw }}</div>
+{{form_open({request: 'DaftarWisuda::onSave',files: true})}}
+<div class="col-md-6">
+    <h3 class="title-pmb">Informasi Mahasiswa</h3>
+    <div class="form-group">
+        <label for="nim">Nim Mahasiswa *</label>
+        <input type="text" name="nim" class="form-control" placeholder="nim" required>
+        <input type="hidden" name="tahun_ajaran_id" value="{{tahun_ajaran.id}}">
+    </div>
+    <div class="form-group">
+        <label for="namaLengkap">Nama Mahasiswa *</label>
+        <input type="text" name="nama_mahasiswa" class="form-control" placeholder="nama mahasiswa" required>
+    </div>
+    <div class="form-group">
+        <label for="hp">HP *</label>
+        <input type="text" name="no_hp" class="form-control" placeholder="HP" required>
+    </div>
+    <div class="form-group">
+        <label for="alamat">Alamat *</label>
+        <textarea name="alamat" class="form-control" rows="3" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="noTelp">Program Pendidikan</label>
+        <select class="form-control" name="jurusan">
+            {% for program_pendidikan in program_pendidikans %}
+            <option value="{{ program_pendidikan.nama_program_pendidikan }}">{{ program_pendidikan.nama_program_pendidikan }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="jurusan">Bukti Pembayaran *</label>
+        <input type="file" class="form-control" name="bukti_pembayaran" />
+    </div>
+    <button class="btn btn-success btn-block" type="submit">Kirim</button>
+</div>

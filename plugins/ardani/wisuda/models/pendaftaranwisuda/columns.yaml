@@ -1,0 +1,38 @@
+columns:
+    nim:
+        label: Nim
+        type: text
+        searchable: true
+        sortable: true
+    nama_mahasiswa:
+        label: 'Nama Lengkap'
+        type: text
+        searchable: true
+        sortable: true
+    no_hp:
+        label: 'No Hp'
+        type: number
+        searchable: true
+        sortable: true
+    jurusan:
+        label: Jurusan
+        type: text
+        searchable: true
+        sortable: true
+    tahun_ajaran:
+        label: 'Tahun Ajaran'
+        type: relation
+        relation: tahun_ajaran
+        select: kode_tahun_ajaran
+    bukti_pembayaran:
+        label: 'Preview'
+        type: partial
+        cssClass: nolink
+        sortable: false
+        path: ~/plugins/ardani/wisuda/models/pendaftaranwisuda/_image_column.htm
+    Menu:
+        label: 'Menu'
+        type: partial
+        cssClass: nolink
+        sortable: false
+        path: ~/plugins/ardani/wisuda/models/pendaftaranwisuda/_menu_column.htm

@@ -1,0 +1,52 @@
+fields:
+    nim:
+        label: Nim
+        oc.commentPosition: ''
+        span: auto
+        placeholder: 'No Induk Mahasiswa'
+        required: 1
+        type: text
+    nama_mahasiswa:
+        label: 'Nama Lengkap'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    no_hp:
+        label: 'No Hp'
+        oc.commentPosition: ''
+        span: auto
+        required: 1
+        type: number
+    jurusan:
+        label: 'Program Studi'
+        oc.commentPosition: ''
+        options:
+            kebidanan: Kebidanan
+            keperawatan: Keperawatan
+        span: auto
+        required: 1
+        type: dropdown
+    alamat:
+        label: Alamat
+        size: small
+        oc.commentPosition: ''
+        span: auto
+        type: textarea
+    tahun_ajaran:
+        label: 'Tahun Ajaran'
+        oc.commentPosition: ''
+        nameFrom: kode_tahun_ajaran
+        descriptionFrom: description
+        span: auto
+        type: relation
+    bukti_pembayaran:
+        label: 'Upload Bukti Pembayaran'
+        oc.commentPosition: ''
+        mode: file
+        useCaption: false
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        required: 1
+        type: fileupload

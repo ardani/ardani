@@ -25,7 +25,7 @@ class Pmb extends ComponentBase
         return [
             'code' => [
                 'title'       => 'kode pendaftaran',
-                'description' => 'kombinasi antara no pendaftaran dan kode generat',
+                'description' => 'kombinasi antara no pendaftaran dan kode generate',
                 'default'     => '{{ :code }}',
                 'type'        => 'string'
             ]

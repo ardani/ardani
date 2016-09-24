@@ -1,0 +1,7 @@
+columns:
+    nim: 'Nim'
+    nama_mahasiswa: 'Nama Mahasiswa'
+    no_hp: 'No Hp'
+    jurusan: 'Jurusan'
+    alamat: 'Alamat'
+    kode_tahun_ajaran: 'Tahun Ajaran'

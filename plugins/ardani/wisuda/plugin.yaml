@@ -1,0 +1,17 @@
+plugin:
+    name: 'ardani.wisuda::lang.plugin.name'
+    description: 'ardani.wisuda::lang.plugin.description'
+    author: ardani
+    icon: oc-icon-graduation-cap
+    homepage: ''
+navigation:
+    pendaftaranwisuda:
+        label: Wisuda
+        url: ardani/wisuda/pendaftaranwisuda
+        icon: icon-angle-double-right
+        order: 500
+        sideMenu:
+            daftar:
+                label: 'Daftar Wisuda'
+                url: ardani/wisuda/pendaftaranwisuda
+                icon: icon-signal

@@ -1,0 +1,5 @@
+export:
+    title: Export Data Wisuda
+    modelClass: Ardani\Wisuda\Models\PendaftaranWisudaExport
+    list: $/ardani/wisuda/models/pendaftaranwisudaexport/columns.yaml
+    redirect: ardani/wisuda/pendaftaranwisuda

@@ -357,6 +357,15 @@ items:
                     isExternal: '0'
                     isHidden: '0'
                     cssClass: ''
+            -
+                title: 'Pendaftaran Wisuda'
+                type: cms-page
+                code: ''
+                reference: pendaftaran-wisuda
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
     -
         title: 'Daftar PMB'
         nesting: ''
@@ -399,9 +408,13 @@ items:
                     isExternal: '0'
             -
                 title: Pendaftaran
+                nesting: ''
                 type: cms-page
+                url: ''
                 code: ''
                 reference: pendaftaran-mahasiswa-baru
+                cmsPage: ''
+                replace: ''
                 viewBag:
                     isHidden: '0'
                     cssClass: ''
@@ -554,10 +567,10 @@ items:
             -
                 title: 'Siakad Online'
                 nesting: '0'
-                type: static-page
-                url: ''
+                type: url
+                url: siakad.stikesbhaktimulia.ac.id
                 code: ''
-                reference: page-layanan-siakad-online
+                reference: ''
                 cmsPage: ''
                 replace: '0'
                 viewBag:

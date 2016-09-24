@@ -24,6 +24,6 @@ class IdentitasMahasiswa extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Ardani.Pmb', 'pmb', 'identitasmahasiswa');
+        BackendMenu::setContext('Ardani.Pmb', 'PMB', 'identitasmahasiswa');
     }
 }

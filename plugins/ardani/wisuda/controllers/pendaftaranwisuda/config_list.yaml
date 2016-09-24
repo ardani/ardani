@@ -1,0 +1,11 @@
+title: PendaftaranWisuda
+modelClass: Ardani\Wisuda\Models\PendaftaranWisuda
+list: $/ardani/wisuda/models/pendaftaranwisuda/columns.yaml
+#recordUrl: 'ardani/wisuda/pendaftaranwisuda/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: false
+showCheckboxes: 1
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
