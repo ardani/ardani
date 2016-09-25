@@ -8,7 +8,7 @@ navigation:
     pendaftaranwisuda:
         label: Wisuda
         url: ardani/wisuda/pendaftaranwisuda
-        icon: icon-angle-double-right
+        icon: icon-graduation-cap
         order: 500
         sideMenu:
             daftar:

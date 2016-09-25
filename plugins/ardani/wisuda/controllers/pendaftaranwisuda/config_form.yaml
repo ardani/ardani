@@ -8,3 +8,4 @@ create:
 update:
     redirect: ardani/wisuda/pendaftaranwisuda
     redirectClose: ardani/wisuda/pendaftaranwisuda
+preview: {  }

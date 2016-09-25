@@ -1,7 +1,34 @@
 columns:
-    nim: 'Nim'
-    nama_mahasiswa: 'Nama Mahasiswa'
-    no_hp: 'No Hp'
-    jurusan: 'Jurusan'
-    alamat: 'Alamat'
-    kode_tahun_ajaran: 'Tahun Ajaran'
+    nim:
+        label: Nim
+        type: text
+    nama_mahasiswa:
+        label: 'Nama Mahasiswa'
+        type: text
+    no_hp:
+        label: 'No Hp'
+        type: text
+    jurusan:
+        label: Jurusan
+        type: text
+    alamat:
+        label: Alamat
+        type: text
+    kode_tahun_ajaran:
+        label: 'Tahun Ajaran'
+        type: text
+    nama_orang_tua:
+        label: 'Nama Orang Tua'
+        type: text
+    email:
+        label: Email
+        type: text
+    judul_skripsi:
+        label: 'Judul Skripsi'
+        type: text
+    tempat_lahir:
+        label: 'Tempat Lahir'
+        type: text
+    tanggal_lahir:
+        label: 'Tgl Lahir'
+        type: text

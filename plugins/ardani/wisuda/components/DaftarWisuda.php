@@ -57,7 +57,19 @@ class DaftarWisuda extends ComponentBase {
             if ($validation->fails())
                 throw new ValidationException($validation);
 
-            $post = Input::only('tahun_ajaran_id','nama_mahasiswa','no_hp','alamat','jurusan','nim');
+            $post = Input::only(
+                'tahun_ajaran_id',
+                'nama_mahasiswa',
+                'no_hp',
+                'alamat',
+                'jurusan',
+                'nim',
+                'nama_orang_tua',
+                'email',
+                'judul_skripsi',
+                'tempat_lahir',
+                'tanggal_lahir'
+            );
             $result = PendaftaranWisuda::create($post);
             if ($result) {
                 $new_id = $result->id;

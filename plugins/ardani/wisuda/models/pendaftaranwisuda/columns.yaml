@@ -21,17 +21,26 @@ columns:
         sortable: true
     tahun_ajaran:
         label: 'Tahun Ajaran'
-        type: relation
-        relation: tahun_ajaran
+        type: text
         select: kode_tahun_ajaran
+        relation: tahun_ajaran
+    nama_orang_tua:
+        label: 'Nama Orang Tua'
+        type: text
+    judul_skripsi:
+        label: Skripsi
+        type: text
+    email:
+        label: Email
+        type: text
     bukti_pembayaran:
-        label: 'Preview'
+        label: Preview
         type: partial
         cssClass: nolink
         sortable: false
         path: ~/plugins/ardani/wisuda/models/pendaftaranwisuda/_image_column.htm
     Menu:
-        label: 'Menu'
+        label: Menu
         type: partial
         cssClass: nolink
         sortable: false
