@@ -57,6 +57,16 @@ class DaftarWisuda extends ComponentBase {
             if ($validation->fails())
                 throw new ValidationException($validation);
 
+            $uploadedPhoto = Input::file('photo_ijazah');
+            $validation_photo = Validator::make(
+                ['photo_ijazah' => $uploadedPhoto],
+                ['photo_ijazah' => $validationRules]
+            );
+
+            if ($validation_photo->fails())
+                throw new ValidationException($validation);
+
+
             $post = Input::only(
                 'tahun_ajaran_id',
                 'nama_mahasiswa',
@@ -74,6 +84,7 @@ class DaftarWisuda extends ComponentBase {
             if ($result) {
                 $new_id = $result->id;
                 $this->processFileUpload($new_id,$uploadedFile);
+                $this->processFileUploadPhoto($new_id,$uploadedPhoto);
                 $param = array(
                     'nama_mahasiswa' => $post['nama_mahasiswa'],
                     'result' => true
@@ -97,6 +108,17 @@ class DaftarWisuda extends ComponentBase {
 
         $mhs = PendaftaranWisuda::find($id);
         $mhs->bukti_pembayaran()->add($file);
+
+    }
+
+    private function processFileUploadPhoto($id,$uploadedFile)
+    {
+        $file = new System\Models\File();
+        $file->data = $uploadedFile;
+        $file->save();
+
+        $mhs = PendaftaranWisuda::find($id);
+        $mhs->photo_ijazah()->add($file);
 
     }
 }

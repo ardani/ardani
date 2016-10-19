@@ -27,14 +27,11 @@ class PendaftaranWisuda extends Controller
     public function index_onDelete()
     {
         if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
-
             foreach ($checkedIds as $mahasiswaid) {
-                if ((!$mhs = Pendaftaran::find($mahasiswaid)) || $this->user->hasAnyAccess(['ardani.wisuda.access_wisuda']))
+                if ((!$mhs = Pendaftaran::find($mahasiswaid)))
                     continue;
-
                 $mhs->delete();
             }
-
             Flash::success('Successfully deleted those Mahasiswa.');
         }
 

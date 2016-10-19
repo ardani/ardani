@@ -40,6 +40,17 @@ fields:
         span: left
         required: 1
         type: fileupload
+    photo_ijazah:
+        label: 'Upload Photo'
+        oc.commentPosition: ''
+        mode: file
+        useCaption: false
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: left
+        required: 1
+        type: fileupload
     judul_skripsi:
         label: 'Judul Skripsi'
         oc.commentPosition: ''

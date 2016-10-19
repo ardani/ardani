@@ -18,7 +18,8 @@ class PendaftaranWisuda extends Model
     ];
 
     public $attachOne = [
-        'bukti_pembayaran' => ['System\Models\File']
+        'bukti_pembayaran' => ['System\Models\File'],
+        'photo_ijazah' => ['System\Models\File']
     ];
 
     public $belongsTo = [
