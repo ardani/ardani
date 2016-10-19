@@ -16,11 +16,15 @@
  * limitations under the License.
  */
 
-use Google\Auth\CacheInterface;
+use Firebase\JWT\ExpiredException as ExpiredExceptionV3;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use phpseclib\Crypt\RSA;
 use phpseclib\Math\BigInteger;
+use Psr\Cache\CacheItemPoolInterface;
+use Google\Auth\Cache\MemoryCacheItemPool;
+use Stash\Driver\FileSystem;
+use Stash\Pool;
 
 /**
  * Wrapper around Google Access Tokens which provides convenience functions
@@ -38,7 +42,7 @@ class Google_AccessToken_Verify
   private $http;
 
   /**
-   * @var Google\Auth\CacheInterface cache class
+   * @var Psr\Cache\CacheItemPoolInterface cache class
    */
   private $cache;
 
@@ -46,10 +50,18 @@ class Google_AccessToken_Verify
    * Instantiates the class, but does not initiate the login flow, leaving it
    * to the discretion of the caller.
    */
-  public function __construct(ClientInterface $http = null, CacheInterface $cache = null)
+  public function __construct(ClientInterface $http = null, CacheItemPoolInterface $cache = null)
   {
     if (is_null($http)) {
       $http = new Client();
+    }
+
+    if (is_null($cache)) {
+      if (class_exists('Stash\Pool')) {
+        $cache = new Pool(new FileSystem);
+      } else {
+        $cache = new MemoryCacheItemPool;
+      }
     }
 
     $this->http = $http;
@@ -71,6 +83,9 @@ class Google_AccessToken_Verify
     if (empty($idToken)) {
       throw new LogicException('id_token cannot be null');
     }
+
+    // set phpseclib constants if applicable
+    $this->setPhpsecConstants();
 
     // Check signature
     $certs = $this->getFederatedSignOnCerts();
@@ -104,6 +119,8 @@ class Google_AccessToken_Verify
         return (array) $payload;
       } catch (ExpiredException $e) {
         return false;
+      } catch (ExpiredExceptionV3 $e) {
+        return false;
       } catch (DomainException $e) {
         // continue
       }
@@ -114,18 +131,7 @@ class Google_AccessToken_Verify
 
   private function getCache()
   {
-    if (!$this->cache) {
-      $this->cache = $this->createDefaultCache();
-    }
-
     return $this->cache;
-  }
-
-  private function createDefaultCache()
-  {
-    return new Google_Cache_File(
-        sys_get_temp_dir().'/google-api-php-client'
-    );
   }
 
   /**
@@ -168,14 +174,22 @@ class Google_AccessToken_Verify
   // are PEM encoded certificates.
   private function getFederatedSignOnCerts()
   {
-    $cache = $this->getCache();
+    $certs = null;
+    if ($cache = $this->getCache()) {
+      $cacheItem = $cache->getItem('federated_signon_certs_v3', 3600);
+      $certs = $cacheItem->get();
+    }
 
-    if (!$certs = $cache->get('federated_signon_certs_v3', 3600)) {
+
+    if (!$certs) {
       $certs = $this->retrieveCertsFromLocation(
           self::FEDERATED_SIGNON_CERT_URL
       );
 
-      $cache->set('federated_signon_certs_v3', $certs);
+      if ($cache) {
+        $cacheItem->set($certs);
+        $cache->save($cacheItem);
+      }
     }
 
     if (!isset($certs['keys'])) {
@@ -189,10 +203,37 @@ class Google_AccessToken_Verify
 
   private function getJwtService()
   {
+    $jwtClass = 'JWT';
     if (class_exists('\Firebase\JWT\JWT')) {
-      return new \Firebase\JWT\JWT;
+      $jwtClass = 'Firebase\JWT\JWT';
     }
 
-    return new \JWT;
+    if (property_exists($jwtClass, 'leeway')) {
+      // adds 1 second to JWT leeway
+      // @see https://github.com/google/google-api-php-client/issues/827
+      $jwtClass::$leeway = 1;
+    }
+
+    return new $jwtClass;
+  }
+
+  /**
+   * phpseclib calls "phpinfo" by default, which requires special
+   * whitelisting in the AppEngine VM environment. This function
+   * sets constants to bypass the need for phpseclib to check phpinfo
+   *
+   * @see phpseclib/Math/BigInteger
+   * @see https://github.com/GoogleCloudPlatform/getting-started-php/issues/85
+   */
+  private function setPhpsecConstants()
+  {
+    if (filter_var(getenv('GAE_VM'), FILTER_VALIDATE_BOOLEAN)) {
+      if (!defined('MATH_BIGINTEGER_OPENSSL_ENABLED')) {
+        define('MATH_BIGINTEGER_OPENSSL_ENABLED', true);
+      }
+      if (!defined('CRYPT_RSA_MODE')) {
+        define('CRYPT_RSA_MODE', RSA::MODE_OPENSSL);
+      }
+    }
   }
 }

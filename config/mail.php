@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'noreply@domain.tld', 'name' => 'OctoberCMS'],
+    'from' => ['address' => 'no-replay@stikesbhaktimulia.ac.id', 'name' => 'Stikes Bhakti Mulia'],
 
     /*
     |--------------------------------------------------------------------------

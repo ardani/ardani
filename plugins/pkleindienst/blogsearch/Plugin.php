@@ -1,7 +1,6 @@
 <?php namespace PKleindienst\BlogSearch;
 
 use System\Classes\PluginBase;
-use System\Classes\PluginManager;
 
 /**
  * blogSearch Plugin Information File
@@ -36,6 +35,25 @@ class Plugin extends PluginBase
         return [
             'PKleindienst\BlogSearch\Components\SearchForm' => 'searchForm',
             'PKleindienst\BlogSearch\Components\SearchResult' => 'searchResult',
+        ];
+    }
+
+    /**
+     * Register new Twig variables
+     * @return array
+     */
+    public function registerMarkupTags()
+    {
+        // Check the translate plugin is installed
+        if (class_exists('RainLab\Translate\Behaviors\TranslatableModel')) {
+            return [];
+        }
+
+        return [
+            'filters' => [
+                '_'  => ['Lang', 'get'],
+                '__' => ['Lang', 'choice'],
+            ]
         ];
     }
 }

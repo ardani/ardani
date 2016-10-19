@@ -1,7 +1,0 @@
-# ===================================
-#  Form Field Definitions
-# ===================================
-
-fields:
-    category_name:
-        label: Category

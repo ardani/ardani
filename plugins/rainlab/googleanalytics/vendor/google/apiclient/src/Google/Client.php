@@ -16,7 +16,7 @@
  */
 
 use Google\Auth\ApplicationDefaultCredentials;
-use Google\Auth\CacheInterface;
+use Google\Auth\Cache\MemoryCacheItemPool;
 use Google\Auth\CredentialsLoader;
 use Google\Auth\HttpHandler\HttpHandlerFactory;
 use Google\Auth\OAuth2;
@@ -26,14 +26,16 @@ use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Ring\Client\StreamHandler;
 use GuzzleHttp\Psr7;
+use Psr\Cache\CacheItemPoolInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Log\LoggerInterface;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler as MonologStreamHandler;
+use Monolog\Handler\SyslogHandler as MonologSyslogHandler;
 
 /**
  * The Google API Client
- * http://code.google.com/p/google-api-php-client/
+ * https://github.com/google/google-api-php-client
  */
 class Google_Client
 {
@@ -55,7 +57,7 @@ class Google_Client
   private $http;
 
   /**
-   * @var Google\Auth\CacheInterface $cache
+   * @var Psr\Cache\CacheItemPoolInterface $cache
    */
   private $cache;
 
@@ -65,7 +67,7 @@ class Google_Client
   private $token;
 
   /**
-   * @var Google_Config $config
+   * @var array $config
    */
   private $config;
 
@@ -86,9 +88,9 @@ class Google_Client
   /**
    * Construct the Google Client.
    *
-   * @param $config Google_Config or string for the ini file to load
+   * @param array $config
    */
-  public function __construct($config = array())
+  public function __construct(array $config = array())
   {
     $this->config = array_merge(
         [
@@ -129,6 +131,13 @@ class Google_Client
           // Task Runner retry configuration
           // @see Google_Task_Runner
           'retry' => array(),
+
+          // cache config for downstream auth caching
+          'cache_config' => [],
+
+          // function to be called when an access token is fetched
+          // follows the signature function ($cacheKey, $accessToken)
+          'token_callback' => null,
         ],
         $config
     );
@@ -197,7 +206,7 @@ class Google_Client
   /**
    * Fetches a fresh access token with a given assertion token.
    * @param $assertionCredentials optional.
-   * @return void
+   * @return array access token
    */
   public function fetchAccessTokenWithAssertion(ClientInterface $authHttp = null)
   {
@@ -327,7 +336,7 @@ class Google_Client
    *
    * @param GuzzleHttp\ClientInterface $http the http client object.
    * @param GuzzleHttp\ClientInterface $authHttp an http client for authentication.
-   * @return void
+   * @return GuzzleHttp\ClientInterface the http client object
    */
   public function authorize(ClientInterface $http = null, ClientInterface $authHttp = null)
   {
@@ -359,7 +368,8 @@ class Google_Client
     $authHandler = $this->getAuthHandler();
 
     if ($credentials) {
-      $http = $authHandler->attachCredentials($http, $credentials);
+      $callback = $this->config['token_callback'];
+      $http = $authHandler->attachCredentials($http, $credentials, $callback);
     } elseif ($token) {
       $http = $authHandler->attachToken($http, $token, (array) $scopes);
     } elseif ($key = $this->config['developer_key']) {
@@ -604,6 +614,7 @@ class Google_Client
   {
     $this->config['hd'] = $hd;
   }
+
   /**
    * Set the prompt hint. Valid values are none, consent and select_account.
    * If no value is specified and the user has not previously authorized
@@ -614,6 +625,7 @@ class Google_Client
   {
     $this->config['prompt'] = $prompt;
   }
+
   /**
    * openid.realm is a parameter from the OpenID 2.0 protocol, not from OAuth
    * 2.0. It is used in OpenID 2.0 requests to signify the URL-space for which
@@ -624,6 +636,7 @@ class Google_Client
   {
     $this->config['openid.realm'] = $realm;
   }
+
   /**
    * If this is provided with the value true, and the authorization request is
    * granted, the authorization will include any previous authorizations
@@ -633,6 +646,15 @@ class Google_Client
   public function setIncludeGrantedScopes($include)
   {
     $this->config['include_granted_scopes'] = $include;
+  }
+
+  /**
+   * sets function to be called when an access token is fetched
+   * @param callable $tokenCallback - function ($cacheKey, $accessToken)
+   */
+  public function setTokenCallback(callable $tokenCallback)
+  {
+    $this->config['token_callback'] = $tokenCallback;
   }
 
   /**
@@ -655,7 +677,7 @@ class Google_Client
    * Verify an id_token. This method will verify the current id_token, if one
    * isn't provided.
    *
-   * @throws Google_Exception
+   * @throws LogicException
    * @param string|null $idToken The token (id_token) that should be verified.
    * @return array|false Returns the token payload as an array if the verification was
    * successful, false otherwise.
@@ -663,7 +685,8 @@ class Google_Client
   public function verifyIdToken($idToken = null)
   {
     $tokenVerifier = new Google_AccessToken_Verify(
-        $this->getHttpClient()
+        $this->getHttpClient(),
+        $this->getCache()
     );
 
     if (is_null($idToken)) {
@@ -917,35 +940,31 @@ class Google_Client
 
   /**
    * Set the Cache object
-   * @param Google\Auth\CacheInterface $cache
+   * @param Psr\Cache\CacheItemPoolInterface $cache
    */
-  public function setCache(CacheInterface $cache)
+  public function setCache(CacheItemPoolInterface $cache)
   {
     $this->cache = $cache;
   }
 
   /**
-   * @return Google\Auth\CacheInterface Cache implementation
+   * @return Psr\Cache\CacheItemPoolInterface Cache implementation
    */
   public function getCache()
   {
-    if (!isset($this->cache)) {
+    if (!$this->cache) {
       $this->cache = $this->createDefaultCache();
     }
 
     return $this->cache;
   }
 
-  protected function createDefaultCache()
+  /**
+   * @return Google\Auth\CacheInterface Cache implementation
+   */
+  public function setCacheConfig(array $cacheConfig)
   {
-    if ($this->isAppEngine()) {
-      $cache = new Google_Cache_Memcache();
-    } else {
-      $cacheDir = sys_get_temp_dir() . '/google-api-php-client';
-      $cache = new Google_Cache_File($cacheDir);
-    }
-
-    return $cache;
+    $this->config['cache_config'] = $cacheConfig;
   }
 
   /**
@@ -972,9 +991,26 @@ class Google_Client
   protected function createDefaultLogger()
   {
     $logger = new Logger('google-api-php-client');
-    $logger->pushHandler(new MonologStreamHandler('php://stderr', Logger::NOTICE));
+    if ($this->isAppEngine()) {
+      $handler = new MonologSyslogHandler('app', LOG_USER, Logger::NOTICE);
+    } else {
+      $handler = new MonologStreamHandler('php://stderr', Logger::NOTICE);
+    }
+    $logger->pushHandler($handler);
 
     return $logger;
+  }
+
+  protected function createDefaultCache()
+  {
+    // use filesystem cache by default if tedivm/stash exists
+    if (class_exists('Stash\Pool')) {
+      $cache = new Stash\Pool(new Stash\Driver\FileSystem);
+    } else {
+      $cache = new MemoryCacheItemPool;
+    }
+
+    return $cache;
   }
 
   /**
@@ -1035,8 +1071,7 @@ class Google_Client
         'private_key' => $signingKey,
         'type' => 'service_account',
       );
-      $keyStream = Psr7\stream_for(json_encode($serviceAccountCredentials));
-      $credentials = CredentialsLoader::makeCredentials($scopes, $keyStream);
+      $credentials = CredentialsLoader::makeCredentials($scopes, $serviceAccountCredentials);
     } else {
       $credentials = ApplicationDefaultCredentials::getCredentials($scopes);
     }
@@ -1056,7 +1091,15 @@ class Google_Client
 
   protected function getAuthHandler()
   {
-    return Google_AuthHandler_AuthHandlerFactory::build($this->getCache());
+    // Be very careful using the cache, as the underlying auth library's cache
+    // implementation is naive, and the cache keys do not account for user
+    // sessions.
+    //
+    // @see https://github.com/google/google-api-php-client/issues/821
+    return Google_AuthHandler_AuthHandlerFactory::build(
+        $this->getCache(),
+        $this->config['cache_config']
+    );
   }
 
   private function createUserRefreshCredentials($scope, $refreshToken)

@@ -1,5 +1,0 @@
-1.0.1: First version of octomap
-1.0.2:
-    - add table for map and category
-    - create_maps_table.php
-    - create_categories_table.php
